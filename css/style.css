@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Upright&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
-/*  */
+/* Fonts */
 
 
 body {
@@ -15,6 +15,10 @@ body {
 	padding: 20px;
 }
 
+
+#connecte {
+	position: absolute;
+}
 
 #logScreen {
 	width: 250px;
@@ -29,6 +33,7 @@ body {
 }
 
 h1 {
+	margin: 0;
 	transition: 2s;
 	font-family: 'Pacifico', cursive;
 }
@@ -60,3 +65,14 @@ button {
 button:hover {
 	font-weight: bold;
 }
+
+
+/* Section caneva */
+
+canvas {
+
+	width: 100%;
+	height: 100%	;
+}
+
+/*  */

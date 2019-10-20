@@ -7,20 +7,29 @@
 	require_once("partial/header.php");
 ?>
 
+
+            <canvas id="canvas" width="1200" height="900"></canvas>
+        </div>
 	<?php
-			if ($action->estConnecte) {
-				?>
-				<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
-				<form action="index.php" method="get">
-				<button name="deconnexion" type="submit">Se déconnecter!</button>
-				</form>
-			<?php
-			}
 			if (isset($_GET["deconnexion"]))
 			{
 				$action->logout();
 			}
+			if ($action->estConnecte) {
+				?>
+				<div id="connecte">
+				<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
+				<form action="index.php" method="get">
+				<button name="deconnexion" type="submit">Se déconnecter!</button>
+				</div>
+				</form>
+
+			<?php
+			}
+			else {
+
 			?>
+
 	<div id="logScreen">
 	<h1>Magix</h1>
 	<form action="index.php" method="post">
@@ -41,5 +50,8 @@
 		<button type="submit">Se connecter!</button>
 	</form>
 	</div>
+	<?php
+		}
+	?>
 </body>
 </html>
