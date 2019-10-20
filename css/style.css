@@ -1,6 +1,14 @@
 
 
 
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+/*  */
+
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -9,17 +17,46 @@ body {
 
 
 #logScreen {
-	width: 15%;
+	width: 250px;
 	padding: 20px;
 	text-align: center;
 	margin: auto;
+	left: 42%;
+	top: 25%;
+	/* display: inline-block; */
+	position: absolute;
+	background-color: lightgray;
+}
+
+h1 {
+	transition: 2s;
+	font-family: 'Pacifico', cursive;
+}
+
+h1:hover {
+	transform: scale(2);
+	transition: 2s;
 }
 
 .logElement {
 	padding-bottom: 10px;
 	padding-top: 20px;
+	font-family: 'Cormorant Upright', serif;
+	font-size: 1.2em;
+
 }
 
+input:focus  {
+	font-weight: bold;
+}
+
+
 button {
+	font-family: 'Cormorant Upright', serif;
+	font-size: 0.8em;
 	margin-top: 20px;
+}
+
+button:hover {
+	font-weight: bold;
 }

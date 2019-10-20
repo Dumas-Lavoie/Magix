@@ -22,7 +22,7 @@
 			}
 			?>
 	<div id="logScreen">
-	<h1>Login</h1>
+	<h1>Magix</h1>
 	<form action="index.php" method="post">
 			<?php
 			if ($action->wrongLogin) {
