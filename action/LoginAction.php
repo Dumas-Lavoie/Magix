@@ -5,7 +5,7 @@
 	class LoginAction extends CommonAction {
 		public $wrongLogin = false;
 		public $estConnecte = false;
-
+		public $key;
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
 		}
@@ -26,9 +26,22 @@
 				else {
 					// Pour voir les informations retournées : var_dump($result);exit;
 					$this->estConnecte = true;
-					var_dump($result);exit;
-					$key = $result->key;
+					// var_dump($result);exit;
+					$this->key = $result->key;
+					$_SESSION["key"] = $result->key;
 				}
+			}
+		}
+
+		public function logout(){
+			if (isset($_SESSION["key"]))
+			{
+				$data = array("key" => $_SESSION["key"]);
+				$result = parent::callAPI("signout", $data);
+			}
+			else
+			{
+				var_dump("ERREUR DE DÉCONNEXION");
 			}
 		}
 

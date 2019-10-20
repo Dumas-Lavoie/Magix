@@ -11,7 +11,14 @@
 			if ($action->estConnecte) {
 				?>
 				<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
+				<form action="index.php" method="get">
+				<button name="deconnexion" type="submit">Se déconnecter!</button>
+				</form>
 			<?php
+			}
+			if (isset($_GET["deconnexion"]))
+			{
+				$action->logout();
 			}
 			?>
 	<form action="index.php" method="post">
