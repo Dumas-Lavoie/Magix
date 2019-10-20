@@ -1,9 +1,10 @@
 <?php
 	require_once("action/CommonAction.php");
-	require_once("action/DAO/UserDAO.php");
+	// require_once("action/DAO/UserDAO.php");
 
 	class LoginAction extends CommonAction {
 		public $wrongLogin = false;
+		public $estConnecte = false;
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
@@ -11,19 +12,24 @@
 
 		protected function executeAction() {
 
-			if (isset($_POST["username"])) {
-				$user = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
+			if (isset($_POST["username"]) && isset($_POST["password"])) {
+				$data = [];
+				$data["username"] = $_POST["username"];
+				$data["password"] = $_POST["password"];
 
-				if (!empty($user)) {
-					$_SESSION["username"] = $user["USERNAME"];
-					$_SESSION["visibility"] = $user["VISIBILITY"];
+				$result = parent::callAPI("signin", $data);
 
-					header("location:index.php");
-					exit;
+				if ($result == "INVALID_USERNAME_PASSWORD") {
+					// err
+					$this->wrongLogin = true;
 				}
 				else {
-					$this->wrongLogin = true;
+					// Pour voir les informations retournées : var_dump($result);exit;
+					$this->estConnecte = true;
+					var_dump($result);exit;
+					$key = $result->key;
 				}
 			}
 		}
+
 	}
