@@ -6,7 +6,7 @@
 
 	require_once("partial/header.php");
 ?>
-	<h1>Login</h1>
+
 	<?php
 			if ($action->estConnecte) {
 				?>
@@ -21,6 +21,8 @@
 				$action->logout();
 			}
 			?>
+	<div id="logScreen">
+	<h1>Login</h1>
 	<form action="index.php" method="post">
 			<?php
 			if ($action->wrongLogin) {
@@ -29,9 +31,15 @@
 			<?php
 			}
 			?>
+
+
+		<div class="logElement">Nom d'usager</div>
 		<input type="text" name="username" placeholder="Username">
+		<div class="logElement">Mot de passe</div>
 		<input type="password" name="password" placeholder="Password">
+		<div></div>
 		<button type="submit">Se connecter!</button>
 	</form>
+	</div>
 </body>
 </html>

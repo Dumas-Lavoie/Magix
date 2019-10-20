@@ -1,0 +1,25 @@
+
+
+
+body {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+
+#logScreen {
+	width: 15%;
+	padding: 20px;
+	text-align: center;
+	margin: auto;
+}
+
+.logElement {
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+
+button {
+	margin-top: 20px;
+}
