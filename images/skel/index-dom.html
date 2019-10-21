@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animated sprite</title>
+		<meta charset="utf-8">
+		<script src="js/TiledImage.js"></script>
+	</head>
+	<body>
+		<div id="spriteDOM" style="border:1px solid red"></div>
+
+		<script>
+			// =======================================================
+			// Embed animation in a div
+			// Works the same way, with the same features, but embeds the sprite in a div instead of a canvas
+			// -------------------------------------------------------
+			let tiledImageDOM = new TiledImage("images/skel-walk.png", 13, 1, 100, true, 2, "spriteDOM");
+
+			tiledImageDOM.changeMinMaxInterval(0, 12);
+
+			tick();
+
+			function tick() {
+				tiledImageDOM.tick(50, 50);
+
+				window.requestAnimationFrame(tick);
+			}
+
+
+		</script>
+	</body>
+</html>
