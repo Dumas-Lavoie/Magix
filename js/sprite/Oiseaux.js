@@ -3,7 +3,7 @@ class Oiseaux {
 		this.time = 0;
 		this.contexte = ctx;
 		this.x = -10;
-        this.y = 100 + Math.random(30);
+        this.y = 50 + Math.random() * 300;
         this.speed = Math.random(3);
         
 		let columnCount = 5;
@@ -16,7 +16,8 @@ class Oiseaux {
 										refreshDelay, loopInColumns, scale);
 
                                     this.tiledImage.setFlipped(true);
-		this.tiledImage.changeRow(1);
+
+		this.tiledImage.changeRow(Math.round(Math.random()));
     }
 
     tick() {

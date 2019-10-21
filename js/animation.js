@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
     spriteList.push(new Background(canvas, 1));
     spriteList.push(new SqueletonGard(ctx));
     spriteList.push(new NoFace(ctx));
+    
     spriteList.push(new Oiseaux(ctx));
     spriteList.push(new Oiseaux(ctx));
     // spriteList.push(new Robot("slash" , ctx));
@@ -26,6 +27,12 @@ window.addEventListener("load", () => {
 
 const tick = () => {
 
+
+    let test = Math.random(1) * 10;
+
+    // spriteList.push(new Oiseaux(ctx));
+ 
+    console.log(test);
 
     for (let i = 0; i < spriteList.length; i++) {
         const sprite = spriteList[i];

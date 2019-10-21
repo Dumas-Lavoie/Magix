@@ -4,6 +4,7 @@ class SqueletonGard {
         this.contexte = ctx;
         this.x = 500;
         this.y = 650;
+        this.state = 0;
         this.direction = 'R';
         let columnCount = 13;
         let rowCount = 1;
@@ -18,34 +19,42 @@ class SqueletonGard {
         this.tiledImage.changeRow(0);
     }
 
+
+
     tick() {
 
 
-        if (this.x < 800 && this.x > 0 && this.direction == 'R') {
-            console.log(this.x)
-            this.x += 1;
-        }
-        if (this.direction == 'L' && this.x > 0) {
-            this.tiledImage.setFlipped(true);
-            this.x -= 1;
-        }
-        // if (this.x < 200)
-        // {
-        //     this.direction = 'R';
-        //     this.tiledImage.setFlipped(false);
-        // }
-        if (this.x >= 800)
-        {
-            this.direction = 'L';
-            console.log("TEST")
-        }
-        if (this.x < 400)
-        {
-            this.direction = 'R';
-            this.tiledImage.setFlipped(false);
-        }
-        
+        if (this.state == 0) {
 
+
+            if (this.x < 800 && this.x > 0 && this.direction == 'R') {
+                this.x += 1;
+            }
+            if (this.direction == 'L' && this.x > 0) {
+                this.tiledImage.setFlipped(true);
+                this.x -= 1;
+            }
+
+            if (this.x >= 800) {
+                this.direction = 'L';
+                console.log("TEST")
+            }
+            if (this.x < 400) {
+                this.direction = 'R';
+                this.tiledImage.setFlipped(false);
+            }
+        }
+
+        else if (this.state == 1) {
+            if (this.x < 650)
+            {
+                this.x += 1;
+            }
+            if (this.x < 651)
+            {
+                this.x -= 1;
+            }
+        }
 
 
         this.tiledImage.tick(this.x, this.y, this.contexte);

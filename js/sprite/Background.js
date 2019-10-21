@@ -10,8 +10,6 @@ class Background {
             this.bg.src = "images/background1.jpg";
             this.posXDepart = -300;
             this.posYDepart = -200;
-
-
         }
 
 
