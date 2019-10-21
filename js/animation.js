@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
 
 
     spriteList.push(new Background(canvas, 1));
-    // spriteList.push(new Robot("hack", ctx));
+    spriteList.push(new NoFace(ctx));
     // spriteList.push(new Robot("slash" , ctx));
 
     // document.querySelector("canvas").onclick = event => {

@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script src="js/animation.js"></script>
 	<script src="js/sprite/Background.js"></script>
+	<script src="js/TiledImage.js"></script>
+	<script src="js/sprite/Noface.js"></script>
 	<title>Magix</title>
 </head>
 

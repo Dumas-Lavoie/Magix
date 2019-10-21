@@ -1,5 +1,6 @@
 class Background {
     constructor(canva, nb) {
+        this.canva = canva;
         this.context = canva.getContext("2d");
         this.bg = new Image();
         this.posXDepart;
@@ -18,7 +19,7 @@ class Background {
 
     tick() {
         if (this.bg.complete) {
-            this.context.drawImage(this.bg, 0, 0);
+            this.context.drawImage(this.bg, this.canva.width / 2 - this.bg.width / 2, this.canva.height / 3 - this.bg.height / 2 - 100);
         }
 
         return true;
