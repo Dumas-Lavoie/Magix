@@ -12,6 +12,7 @@
 	<script src="js/sprite/Noface.js"></script>
 	<script src="js/sprite/SqueletonGard.js"></script>
 	<script src="js/sprite/Oiseaux.js"></script>
+	<script src="js/sprite/TextPanel.js"></script>
 	<title>Magix</title>
 </head>
 

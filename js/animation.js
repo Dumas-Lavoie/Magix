@@ -8,17 +8,14 @@ window.addEventListener("load", () => {
     ctx = canvas.getContext("2d");
 
 
+
     spriteList.push(new Background(canvas, 1));
     spriteList.push(new SqueletonGard(ctx));
     spriteList.push(new NoFace(ctx));
     
     spriteList.push(new Oiseaux(ctx));
     spriteList.push(new Oiseaux(ctx));
-    // spriteList.push(new Robot("slash" , ctx));
-
-    // document.querySelector("canvas").onclick = event => {
-    //     spriteList.push(new Bob(ctx));
-    // };
+    spriteList.push(new TextPanel(ctx));
 
 
     tick();
