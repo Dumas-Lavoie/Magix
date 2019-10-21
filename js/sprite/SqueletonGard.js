@@ -1,18 +1,18 @@
 class SqueletonGard {
     constructor(ctx) {
-		this.time = 0;
-		this.contexte = ctx;
-		this.x = 500;
+        this.time = 0;
+        this.contexte = ctx;
+        this.x = 500;
         this.y = 650;
         this.direction = 'R';
-		let columnCount = 13;
-		let rowCount = 1;
-		let refreshDelay = 100;
-		let loopInColumns = true; // Otherwise, false
-		let scale = 1;
+        let columnCount = 13;
+        let rowCount = 1;
+        let refreshDelay = 100;
+        let loopInColumns = true; // Otherwise, false
+        let scale = 1;
 
-		this.tiledImage = new TiledImage("images/testSkel.png", columnCount, rowCount,
-										refreshDelay, loopInColumns, scale);
+        this.tiledImage = new TiledImage("images/testSkel.png", columnCount, rowCount,
+            refreshDelay, loopInColumns, scale);
 
         console.log("TEST");
         this.tiledImage.changeRow(0);
@@ -21,29 +21,34 @@ class SqueletonGard {
     tick() {
 
 
-        if(this.x < 800 && this.x > 0 && this.direction == 'R')
-        {
+        if (this.x < 800 && this.x > 0 && this.direction == 'R') {
             console.log(this.x)
             this.x += 1;
         }
-        else if (this.direction == 'L' && this.x > 0)
-        {
+        if (this.direction == 'L' && this.x > 0) {
             this.tiledImage.setFlipped(true);
-            this.x -=  1;
+            this.x -= 1;
         }
         // if (this.x < 200)
         // {
         //     this.direction = 'R';
         //     this.tiledImage.setFlipped(false);
         // }
-        else 
+        if (this.x >= 800)
         {
-            this.direction == 'R' ? this.direction = 'L'   : this.direction = 'R';
+            this.direction = 'L';
+            console.log("TEST")
+        }
+        if (this.x < 400)
+        {
+            this.direction = 'R';
+            this.tiledImage.setFlipped(false);
         }
         
 
 
-		this.tiledImage.tick(this.x, this.y, this.contexte);
+
+        this.tiledImage.tick(this.x, this.y, this.contexte);
 
         return true;
     }

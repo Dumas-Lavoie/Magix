@@ -30,6 +30,7 @@ body {
 	/* display: inline-block; */
 	position: absolute;
 	background-color: lightgray;
+	transition: 1s;
 }
 
 h1 {
