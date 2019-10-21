@@ -2,13 +2,13 @@ class NoFace {
     constructor(ctx) {
 		this.time = 0;
 		this.contexte = ctx;
-		this.x = 300;
+		this.x = 700;
 		this.y = 650;
 		let columnCount = 5;
 		let rowCount = 6;
 		let refreshDelay = 300;
 		let loopInColumns = true; // Otherwise, false
-		let scale = 0.5;
+		let scale = 0.3;
 
 		this.tiledImage = new TiledImage("images/noFaceSpriteSheet.png", columnCount, rowCount,
 										refreshDelay, loopInColumns, scale);

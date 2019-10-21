@@ -9,7 +9,10 @@ window.addEventListener("load", () => {
 
 
     spriteList.push(new Background(canvas, 1));
+    spriteList.push(new SqueletonGard(ctx));
     spriteList.push(new NoFace(ctx));
+    spriteList.push(new Oiseaux(ctx));
+    spriteList.push(new Oiseaux(ctx));
     // spriteList.push(new Robot("slash" , ctx));
 
     // document.querySelector("canvas").onclick = event => {

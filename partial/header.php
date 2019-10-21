@@ -10,6 +10,8 @@
 	<script src="js/sprite/Background.js"></script>
 	<script src="js/TiledImage.js"></script>
 	<script src="js/sprite/Noface.js"></script>
+	<script src="js/sprite/SqueletonGard.js"></script>
+	<script src="js/sprite/Oiseaux.js"></script>
 	<title>Magix</title>
 </head>
 
