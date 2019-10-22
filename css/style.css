@@ -2,10 +2,12 @@
 
 
 /* Fonts */
-
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Upright&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-
+@font-face {
+    font-family: "Wizzta";
+    src: url("../fonts/Wizzta.ttf");
+}
 /* Fonts */
 
 

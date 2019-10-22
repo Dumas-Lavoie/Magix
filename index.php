@@ -8,7 +8,8 @@
 ?>
 
 
-            <canvas id="canvas" width="1200" height="900"></canvas>
+
+		<canvas id="canvas" width="1200" height="900"></canvas>
         </div>
 	<?php
 			if (isset($_GET["deconnexion"]))
@@ -17,6 +18,7 @@
 			}
 			if ($action->estConnecte) {
 				?>
+				<script></script>
 				<div id="connecte">
 				<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
 				<form action="index.php" method="get">

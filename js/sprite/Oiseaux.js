@@ -5,7 +5,7 @@ class Oiseaux {
 		this.x = -10;
         this.y = 50 + Math.random() * 300;
         this.speed = Math.random(3);
-        
+
 		let columnCount = 5;
 		let rowCount = 2;
 		let refreshDelay = 300;
@@ -21,12 +21,13 @@ class Oiseaux {
     }
 
     tick() {
-        
+
         this.x += 1 + this.speed;
 
 
 		this.tiledImage.tick(this.x, this.y, this.contexte);
 
-        return true;
+
+		return	this.x > 1000 ?  false : true;
     }
 }
