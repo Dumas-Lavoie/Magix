@@ -1,5 +1,5 @@
 class Background {
-    constructor(canva) {
+    constructor(canva, bgSrc) {
         this.canva = canva;
         this.context = canva.getContext("2d");
         this.bg = new Image();
@@ -7,7 +7,7 @@ class Background {
         this.posYDepart;
         this.state = 1;
 
-        this.bg.src = "images/background1.jpg";
+        this.bg.src = bgSrc;
         this.posXDepart = -300;
         this.posYDepart = -200;
     }

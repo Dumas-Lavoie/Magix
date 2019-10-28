@@ -7,8 +7,9 @@
 	require_once("partial/header.php");
 ?>
 
-	<script src="js/animationLobby.js"></script>
 
+
+		<script src="js/animationJeu.js"></script>
 
 <?php
 			if (isset($_GET["deconnexion"]))

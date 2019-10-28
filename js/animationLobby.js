@@ -8,28 +8,16 @@ window.addEventListener("load", () => {
     ctx = canvas.getContext("2d");
 
     // Ce fichier JS est le fichier pour la page d’authentification
-    let backgroundSrc = "images/background1.jpg"
-    spriteList.push(new Background(canvas, backgroundSrc));
-    spriteList.push(new SqueletonGard(ctx));
-    spriteList.push(new NoFace(ctx));
-
-    spriteList.push(new Oiseaux(ctx));
-    spriteList.push(new Oiseaux(ctx));
-    // spriteList.push(new TextPanel(ctx));
+    canvas = document.querySelector("body").background("images/background2.gif");
 
 
     tick();
 });
 
 
-const changeState = (state) => {
-    for (let i = 0; i < spriteList.length; i++) {
-        if (spriteList[i] instanceof Background)
-        {
-            spriteList[i].changeState(state);
-        }
-    }
-}
+
+
+
 
 const tick = () => {
 

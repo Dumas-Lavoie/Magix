@@ -12,5 +12,6 @@
 
 		protected function executeAction() {
 			$this->data = contentDAO::getContent();
+			header("Location: lobby.php");
 		}
 	}

@@ -7,8 +7,7 @@
 	require_once("partial/header.php");
 ?>
 
-
-
+		<script src="js/animation.js"></script>
 		<canvas id="canvas" width="1200" height="900"></canvas>
         </div>
 	<?php
