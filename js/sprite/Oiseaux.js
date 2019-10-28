@@ -28,6 +28,6 @@ class Oiseaux {
 		this.tiledImage.tick(this.x, this.y, this.contexte);
 
 
-		return	this.x > 1000 ?  false : true;
+		return	this.x > 2000 ?  false : true;
     }
 }

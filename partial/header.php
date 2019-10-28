@@ -9,7 +9,7 @@
 	<script src="js/animation.js"></script>
 	<script src="js/sprite/Background.js"></script>
 	<script src="js/TiledImage.js"></script>
-	<script src="js/sprite/Noface.js"></script>
+	<script src="js/sprite/NoFace.js"></script>
 	<script src="js/sprite/SqueletonGard.js"></script>
 	<script src="js/sprite/Oiseaux.js"></script>
 	<script src="js/sprite/TextPanel.js"></script>

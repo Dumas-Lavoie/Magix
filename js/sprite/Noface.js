@@ -41,10 +41,10 @@ class NoFace {
 			this.fade = "fadeOut";
 		}
 
-	
+
 
 		this.time++;
-		if (this.time % 100 == 0) {
+		if (this.time % 100 == 0 && this.opacity <= 0.2) {
 			this.x = 300 + Math.random(1) * 600;
 			// this.time = 0;
 		}
