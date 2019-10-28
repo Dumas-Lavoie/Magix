@@ -30,6 +30,7 @@ class IndexAction extends CommonAction
 				// var_dump($result);exit;
 				$this->key = $result->key;
 				$_SESSION["key"] = $result->key;
+				$_SESSION["visibility"] = "log"
 				header("Location: lobby.php");
 				exit();
 			}
