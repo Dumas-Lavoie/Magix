@@ -1,4 +1,3 @@
-<!-- Il s'agit de la page de login -->
 <?php
 	require_once("action/IndexAction.php");
 

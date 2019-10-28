@@ -1,3 +1,4 @@
+<!-- Page de lobby -->
 <?php
 	require_once("action/LobbyAction.php");
 
