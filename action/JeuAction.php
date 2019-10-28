@@ -14,6 +14,11 @@ class JeuAction extends CommonAction
 
 	protected function executeAction() {
 
+		if ( $_SESSION["key"] == null)
+		{
+				header("Location: index.php");
+				exit();
+		}
 	}
 
 	public function logout()
@@ -21,6 +26,7 @@ class JeuAction extends CommonAction
 		if (isset($_SESSION["key"])) {
 			$data = array("key" => $_SESSION["key"]);
 			$result = parent::callAPI("signout", $data);
+			$_SESSION["key"] = null;
 		} else {
 			var_dump("ERREUR DE DÉCONNEXION");
 		}
