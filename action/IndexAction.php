@@ -1,17 +1,49 @@
 <?php
-	require_once("action/CommonAction.php");
-	require_once("DAO/ContentDAO.php");
+require_once("action/CommonAction.php");
+// require_once("action/DAO/UserDAO.php");
 
-	class IndexAction extends CommonAction {
+class IndexAction extends CommonAction
+{
+	public $wrongLogin = false;
+	public $estConnecte = false;
+	public $key;
+	public function __construct()
+	{
+		parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
+	}
 
-		public $data;
+	protected function executeAction()
+	{
 
-		public function __construct() {
-			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
-		}
+		if (isset($_POST["username"]) && isset($_POST["password"])) {
+			$data = [];
+			$data["username"] = $_POST["username"];
+			$data["password"] = $_POST["password"];
 
-		protected function executeAction() {
-			$this->data = contentDAO::getContent();
-			header("Location: lobby.php");
+			$result = parent::callAPI("signin", $data);
+
+			if ($result == "INVALID_USERNAME_PASSWORD") {
+				// err
+				$this->wrongLogin = true;
+			} else {
+				// Pour voir les informations retournées : var_dump($result);exit;
+				$this->estConnecte = true;
+				// var_dump($result);exit;
+				$this->key = $result->key;
+				$_SESSION["key"] = $result->key;
+				header("Location: lobby.php");
+				exit();
+			}
 		}
 	}
+
+	public function logout()
+	{
+		if (isset($_SESSION["key"])) {
+			$data = array("key" => $_SESSION["key"]);
+			$result = parent::callAPI("signout", $data);
+		} else {
+			var_dump("ERREUR DE DÉCONNEXION");
+		}
+	}
+}

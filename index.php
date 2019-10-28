@@ -1,7 +1,8 @@
+<!-- Il s'agit de la page de login -->
 <?php
-	require_once("action/LoginAction.php");
+	require_once("action/IndexAction.php");
 
-	$action = new LoginAction();
+	$action = new IndexAction();
 	$action->execute();
 
 	require_once("partial/header.php");
