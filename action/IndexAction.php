@@ -14,7 +14,6 @@ class IndexAction extends CommonAction
 
 	protected function executeAction()
 	{
-
 		if (isset($_POST["username"]) && isset($_POST["password"])) {
 			$data = [];
 			$data["username"] = $_POST["username"];

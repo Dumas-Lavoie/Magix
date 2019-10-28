@@ -1,6 +1,4 @@
 
-
-
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Upright&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
@@ -27,7 +25,7 @@ body {
 	padding: 20px;
 	text-align: center;
 	margin: auto;
-	left: 42%;
+	left: 20%;
 	top: 25%;
 	/* display: inline-block; */
 	position: absolute;
