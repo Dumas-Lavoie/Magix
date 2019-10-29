@@ -30,7 +30,7 @@ class IndexAction extends CommonAction
 				// var_dump($result);exit;
 				$this->key = $result->key;
 				$_SESSION["key"] = $result->key;
-				$_SESSION["visibility"] = "log"
+				$_SESSION["visibility"] = parent::$VISIBILITY_MEMBER;
 				header("Location: lobby.php");
 				exit();
 			}
@@ -42,6 +42,7 @@ class IndexAction extends CommonAction
 		if (isset($_SESSION["key"])) {
 			$data = array("key" => $_SESSION["key"]);
 			$result = parent::callAPI("signout", $data);
+			$_SESSION["visibility"] = parent::$VISIBILITY_PUBLIC;
 		} else {
 			var_dump("ERREUR DE DÉCONNEXION");
 		}

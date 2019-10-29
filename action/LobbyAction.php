@@ -13,7 +13,11 @@ class LobbyAction extends CommonAction
 	}
 
 	protected function executeAction() {
-
+		if ($_SESSION["visibility"] < parent::$VISIBILITY_MEMBER)
+		{
+				header("Location: index.php");
+				exit();
+		}
 	}
 
 	public function logout()

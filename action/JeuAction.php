@@ -14,7 +14,7 @@ class JeuAction extends CommonAction
 
 	protected function executeAction() {
 
-		if ( $_SESSION["key"] == null)
+		if ($_SESSION["visibility"] < parent::$VISIBILITY_MEMBER)
 		{
 				header("Location: index.php");
 				exit();
