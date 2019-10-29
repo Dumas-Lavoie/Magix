@@ -21,6 +21,8 @@
 			if (isset($_SESSION["key"])) {
 				?>
 				<script></script>
+				<div id="boutonPratique" onclick="redirectPratique()">Pratique</div>
+				<div id="boutonPVP" onclick="matchEnLigne()">Match en ligne</div>
 				<div id="connecte">
 				<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
 				<form action="index.php" method="get">

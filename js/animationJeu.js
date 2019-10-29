@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 
     // Ce fichier JS est le fichier pour la page d’authentification
     // canvas = document.querySelector("body").background("images/background2.gif");
-	spriteList.push(new NoFace(ctx))
+	// spriteList.push(new NoFace(ctx))
 	$('body').css('background-image', 'url(images/background3.gif)')
 	$('body').css('background-size', 'cover');
 	$('body').css('background-repeat', 'no-repeat');

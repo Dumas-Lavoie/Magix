@@ -33,3 +33,7 @@ const tick = () => {
 
     window.requestAnimationFrame(tick);
 }
+
+const redirectPratique = () => {
+    window.location.replace("jeu.php");
+}
