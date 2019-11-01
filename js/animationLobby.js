@@ -35,5 +35,5 @@ const tick = () => {
 }
 
 const redirectPratique = () => {
-    window.location.replace("jeu.php");
+    window.location.replace("redirectPratique.php");
 }

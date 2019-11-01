@@ -18,6 +18,8 @@ class LobbyAction extends CommonAction
 				header("Location: index.php");
 				exit();
 		}
+
+		
 	}
 
 	public function logout()
