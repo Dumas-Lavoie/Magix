@@ -1,10 +1,6 @@
 window.addEventListener("load", () => {
 	setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
-
-
 });
-
-
 
 
 function state() {
@@ -17,17 +13,12 @@ function state() {
 
 	let playerHand = reponse.hand;
 
+	ajouterCarte(playerHand, "#handsCards");
 
 
 
-
-	document.getElementById("handsCards").innerHTML = "";
 
 	console.log(reponse);
-
-	reponse.hand.forEach(element => {
-
-	});
 
     // traitement ici…
 
@@ -36,23 +27,55 @@ function state() {
 }
 
 
-function action() {
-	$.ajax({
-        url : "ajax-action.php",
-        type : "POST"
-    })
-    .done(function (msg) {
-	console.log(msg);
-	})
+function ajouterCarte(tableau, conteneur)
+{
+	let template = document.querySelector("#card-Template").innerHTML;
+
+	for (i = 0; i<tableau.length; i++)
+	{
+		let newCard = Document.createElement("div");
+		newCard.innerHTML = template;
+		newCard.querySelector("h2").innerHTML = "Nom de la carte";
+
+
+		document.querySelector(conteneur).appendChild(newCard);
+	}
+
 }
 
 
+function clearGame ()
+{
+	// Pour tous les conteneurs
+	document.getElementById("handsCards").innerHTML = "";
+	document.getElementById("oponentCards").innerHTML = "";
+	document.getElementById("boardCard").innerHTML = "";
+}
+
+function action(action, uId=null, uIdAttackedCard=null) {
+	$.ajax({
+        url : "ajax-action.php",
+		type : "POST",
+		data : {
+			type : action,
+			UID : uId,
+			UIDAC : uIdAttackedCard
+		}
+    })
+    .done(function (msg) {
+		console.log("Action:");
+		console.log(msg);
+	})
+}
 
 const terminer = () => {
-	action();
+	action("END_TURN");
+}
+
+const heroPower = () => {
+	action("HERO_POWER");
 }
 
 
 const addCard = () => {
-	
 }

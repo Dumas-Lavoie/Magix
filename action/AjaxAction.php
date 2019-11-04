@@ -14,7 +14,20 @@
 		 function execute() {
 			$data = [];
 			$data["key"] = $_SESSION["key"];
-			$data["type"] = "END_TURN";
+
+			$data["type"] = $_POST["type"];
+
+			$UID = $_POST["UID"];
+			$TUID = $_POST["UIDAC"];
+
+			if ($UID != null)
+			{
+				$data["uid"] = $UID;
+			}
+			if($TUID != null)
+			{
+				$data["targetuid"] = $TUID;
+			}
 
 
 
