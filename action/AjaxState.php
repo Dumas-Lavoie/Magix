@@ -3,9 +3,6 @@
 
 	class AjaxState extends CommonAction
 	{
-		public $wrongLogin = false;
-		public $estConnecte = false;
-		public $key;
 		public $result;
 
 

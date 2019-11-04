@@ -55,14 +55,13 @@ if (isset($_SESSION["key"])) {
 			<div id="tempsJoueur">21</div>
 		</div>
 		<div id="handsCards">
-			
+
 		</div>
-		<div id="boutonTerminer"><button onclick="terminer()">Terminer son tour</button></div>
+		<div id="boutonTerminer">
+			<button onclick="terminer()">Terminer son tour</button>
+		</div>
 
 	</div>
-
-<!-- Div vid main: a -->
-
 	</div>
 	</form>
 

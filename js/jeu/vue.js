@@ -15,7 +15,10 @@ function state() {
     .done(function (msg) {
 	var reponse = JSON.parse(msg);
 
-	// console.log(reponse);
+	let playerHand = reponse.hand;
+
+
+
 
 
 	document.getElementById("handsCards").innerHTML = "";
@@ -29,14 +32,27 @@ function state() {
     // traitement ici…
 
     setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+	})
+}
 
 
-
+function action() {
+	$.ajax({
+        url : "ajax-action.php",
+        type : "POST"
+    })
+    .done(function (msg) {
+	console.log(msg);
 	})
 }
 
 
 
 const terminer = () => {
-	console.log("TEST");
+	action();
+}
+
+
+const addCard = () => {
+	
 }
