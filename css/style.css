@@ -95,3 +95,24 @@ canvas {
 	background-image: url("../images/gameAssets/menuSelected.png");
 	margin: auto;
 }
+
+#boutonPVP {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50%;
+	height: 40px;
+	width: 10%;
+	text-align: center;
+	background-image: url("../images/gameAssets/menuNotSelected.png");
+	margin: auto;
+}
+
+#boutonPVP:hover {
+	/* background-repeat: no-repeat; */
+	/* background-size: cover; */
+	/* height: 40px; */
+	/* width: 5%; */
+	background-image: url("../images/gameAssets/menuSelected.png");
+	margin: auto;
+}
+

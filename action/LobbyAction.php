@@ -18,7 +18,6 @@ class LobbyAction extends CommonAction
 				header("Location: index.php");
 				exit();
 		}
-
 		
 	}
 
@@ -27,6 +26,10 @@ class LobbyAction extends CommonAction
 		if (isset($_SESSION["key"])) {
 			$data = array("key" => $_SESSION["key"]);
 			$result = parent::callAPI("signout", $data);
+			// remove all session variables
+			session_unset(); 
+			// destroy the session 
+			session_destroy(); 
 		} else {
 			var_dump("ERREUR DE DÉCONNEXION");
 		}

@@ -37,7 +37,6 @@ class SqueletonGard {
 
             if (this.x >= 800) {
                 this.direction = 'L';
-                console.log("TEST")
             }
             if (this.x < 400) {
                 this.direction = 'R';

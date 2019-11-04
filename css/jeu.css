@@ -1,0 +1,10 @@
+
+
+#gameBoard {
+    width: 100%;
+    margin-top: 6vw;
+    height: 38vw;
+    background-color: rgba(132, 197, 198, 0.35);
+    position: absolute;
+    display: inline-block;
+}

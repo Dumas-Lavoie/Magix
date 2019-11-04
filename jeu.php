@@ -20,10 +20,13 @@
 			}
 			if (isset($_SESSION["key"])) {
 				?>
-				<script></script>
+				<!-- <script></script> -->
 				<canvas id="canvas" width="1200" height="900"></canvas>
+
+				<!-- BOARD -->
+				<div id="gameBoard"></div>
 				<div id="connecte">
-				<div class="error-div"><strong>Vous êtes connecté
+				<div class="error-div"><strong>Vous êtes connecté</strong></div>
 				<form action="index.php" method="get">
 				<button name="deconnexion" type="submit">Se déconnecter!</button>
 				</div>
