@@ -1,9 +1,9 @@
 <?php
 
-require_once("action/AjaxAction.php");
+require_once("action/AjaxState.php");
 
 
-$test = new AjaxAction();
+$test = new AjaxState();
 
 $test->execute();
 

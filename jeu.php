@@ -31,30 +31,54 @@ if (isset($_SESSION["key"])) {
 			<div>0</div>
 		</div>
 		<div id="connecte">
-		<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
-		<form action="index.php" method="get">
-		<button id="boutonConnecte" name="deconnexion" type="submit">Se déconnecter!</button>
-		</form>
+			<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
+			<form action="index.php" method="get">
+				<button id="boutonConnecte" name="deconnexion" type="submit">Se déconnecter!</button>
+			</form>
 		</div>
 
-
-		</div>
-		<div id="gameBoard">
-			<div id="opponentCards">
-				<div>Carte1</div>
-				<div>Carte1</div>
-			</div>
-			<div id="playerCards">playerCards</div>
-		</div>
-		<div id="playerBoard">Player board</div>
 
 	</div>
-</form>
+	<div id="gameBoard">
+		<div id="opponentCards">
+		</div>
+		<div id="playerCards">
+
+		</div>
+	</div>
+	<div id="playerBoard">
+		<div id="conteneurs">
+			<!-- En display flex vertical -->
+			<!-- Les trois conteneurs du joeur: temps, vie et mana -->
+			<div id="VieJoueur">18</div>
+			<div id="ManaJoueur">4</div>
+			<div id="tempsJoueur">21</div>
+		</div>
+		<div id="handsCards">
+			
+		</div>
+		<div id="boutonTerminer"><button onclick="terminer()">Terminer son tour</button></div>
+
+	</div>
+
+<!-- Div vid main: a -->
+
+	</div>
+	</form>
 
 <?php
 }
 ?>
 
+<template id="card-template">
+				<div class='character'>
+					<div class='uid'></div>
+					<h2 class='name'>Goblin</h2>
+					<div class='img'></div>
+					<div class='attack'></div>
+					<div class='hp'></div>
+				</div>
+</template>
 </body>
 
 </html>

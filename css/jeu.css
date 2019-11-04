@@ -49,11 +49,14 @@
 
 #gameBoard div:first-of-type {
     display: flex;
+    justify-content: space-around;
 
     height: 50%;
 }
 
 #gameBoard div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-around;
     height: 50%;
 }
 
@@ -63,3 +66,48 @@
     position: absolute;
     text-align: right;
 }
+
+
+#playerBoard {
+    height: 20vh;
+    background-color: rgba(227, 218, 218, 0.5)
+}
+
+
+
+/* TEMPLATE POUR LES CARTES */
+
+/* Le container pour les cartes du joueur */
+#lesCartesJoueur {
+    display: flex;
+	align-items:stretch;
+	justify-content: center;
+	width:1000px;
+	margin:50px auto;
+}
+
+.character {
+	border:1px solid white;
+	background-color:#555;
+	padding:30px;
+	text-align:center;
+	margin:0 10px;
+	transition: 1s;
+	box-shadow: 0 0 10px white;
+}
+
+.character h2 {
+	margin-bottom:20px;
+}
+
+.character .hp {
+	margin-top:30px;
+	font-size:30px;
+	font-weight:bold;
+	text-shadow: 0 0 14px black;
+}
+
+.character:hover {
+	cursor:pointer;
+	background-color:#999;
+	box-shadow: 0 0 10px #999;
