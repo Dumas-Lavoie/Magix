@@ -1,40 +1,44 @@
 <!-- Page de jeu -->
 <?php
-	require_once("action/JeuAction.php");
+require_once("action/JeuAction.php");
 
-	$action = new JeuAction();
-	$action->execute();
+$action = new JeuAction();
+$action->execute();
 
-	require_once("partial/header.php");
+require_once("partial/header.php");
 ?>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/animationJeu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/animationJeu.js"></script>
 
 
 <?php
-			if (isset($_GET["deconnexion"]))
-			{
-				$action->logout();
-			}
-			if (isset($_SESSION["key"])) {
-				?>
-				<!-- <script></script> -->
-				<canvas id="canvas" width="1200" height="900"></canvas>
+if (isset($_GET["deconnexion"])) {
+	$action->logout();
+}
+if (isset($_SESSION["key"])) {
+	?>
+	<!-- <script></script> -->
+	<canvas id="canvas" width="1200" height="900"></canvas>
 
-				<!-- BOARD -->
-				<div id="gameBoard"></div>
-				<div id="connecte">
-				<div class="error-div"><strong>Vous êtes connecté</strong></div>
-				<form action="index.php" method="get">
+	<!-- BOARD -->
+	<div id=ecranJeu>
+		<div id="opponentBoard">Opponent board</div>
+		<div id="connecte">
+			<div class="error-div"><strong>Vous êtes connecté</strong></div>
+			<form action="index.php" method="get">
 				<button name="deconnexion" type="submit">Se déconnecter!</button>
-				</div>
-				</form>
+		</div>
+		<div id="playerBoard">Player board</div>
 
-			<?php
-			}
-			?>
+	</div>
+	</form>
+
+<?php
+}
+?>
 
 </body>
+
 </html>

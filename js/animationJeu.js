@@ -15,9 +15,9 @@ window.addEventListener("load", () => {
 	$('body').css('background-image', 'url(images/background3.gif)');
 	$('body').css('background-size', 'cover');
     $('body').css('background-repeat', 'no-repeat');
-    
+
     tick();
-    
+
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
@@ -39,18 +39,15 @@ const tick = () => {
 
 function state() {
     $.ajax({
-        url : "action/ajax-state.php",
+        url : "ajax-state.php",
         type : "POST"
     })
-    .done(function (msg) { 
-    console.log(msg);
+    .done(function (msg) {
     var reponse = JSON.parse(msg);
 
+
     // traitement ici…
-    console.log(reponse);
 
     setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
     })
 }
-
-

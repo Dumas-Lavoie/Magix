@@ -1,10 +1,28 @@
 
-
-#gameBoard {
+/*
+#playerBoard {
+    position: relative;
     width: 100%;
-    margin-top: 6vw;
-    height: 38vw;
+    margin-top: 95vh;
+
+    height: 2vh;
     background-color: rgba(132, 197, 198, 0.35);
-    position: absolute;
+
     display: inline-block;
 }
+
+#opponentBoard {
+    width: 100%;
+}
+
+
+#ecranJeu {
+    display: flex;
+    flex-direction: column;
+}
+
+#connecte {
+	position: relative;
+	/* display: flex;
+}
+*/

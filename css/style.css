@@ -18,6 +18,7 @@ body {
 
 #connecte {
 	position: absolute;
+	/* display: flex; */
 }
 
 #logScreen {
@@ -115,4 +116,3 @@ canvas {
 	background-image: url("../images/gameAssets/menuSelected.png");
 	margin: auto;
 }
-
