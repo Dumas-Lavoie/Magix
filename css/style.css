@@ -12,12 +12,19 @@
 body {
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	/* padding: 20px; */
+	margin: 0;
 }
 
 
-#connecte {
+#boutonConnecte {
 	position: absolute;
+	left: 80vw;
+}
+
+#connecte {
+	position: relative;
+	display: inline;
 	/* display: flex; */
 }
 
