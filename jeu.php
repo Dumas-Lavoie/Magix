@@ -39,6 +39,13 @@ if (isset($_SESSION["key"])) {
 
 
 		</div>
+		<div id="gameBoard">
+			<div id="opponentCards">
+				<div>Carte1</div>
+				<div>Carte1</div>
+			</div>
+			<div id="playerCards">playerCards</div>
+		</div>
 		<div id="playerBoard">Player board</div>
 
 	</div>

@@ -19,7 +19,7 @@ body {
 
 #boutonConnecte {
 	position: absolute;
-	left: 80vw;
+	left: 94vw;
 }
 
 #connecte {
@@ -96,10 +96,6 @@ canvas {
 }
 
 #boutonPratique:hover {
-	/* background-repeat: no-repeat; */
-	/* background-size: cover; */
-	/* height: 40px; */
-	/* width: 5%; */
 	background-image: url("../images/gameAssets/menuSelected.png");
 	margin: auto;
 }
@@ -116,10 +112,6 @@ canvas {
 }
 
 #boutonPVP:hover {
-	/* background-repeat: no-repeat; */
-	/* background-size: cover; */
-	/* height: 40px; */
-	/* width: 5%; */
 	background-image: url("../images/gameAssets/menuSelected.png");
 	margin: auto;
 }

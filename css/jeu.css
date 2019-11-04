@@ -1,41 +1,3 @@
-/*
-#playerBoard {
-    position: relative;
-    width: 100%;
-    margin-top: 95vh;
-
-    height: 2vh;
-    background-color: rgba(132, 197, 198, 0.35);
-
-    display: inline-block;
-}
-
-#opponentBoard {
-    width: 100%;
-}
-
-
-#ecranJeu {
-    display: flex;
-    flex-direction: column;
-}
-
-#connecte {
-	position: relative;
-
-} */
-
-
-/* #playerBoard {
-    position: relative;
-    width: 100%;
-
-    height: 2vh;
-    background-color: rgba(132, 197, 198, 0.35);
-
-    display: inline-block;
-} */
-
 #opponentBoard {
     background-color: rgba(132, 197, 198, 0.35);
     height: 20vh;
@@ -76,7 +38,28 @@
     line-height: 23vh;
 }
 
-
 #gameBoard {
     height: 60vh;
+    background-color: rgba(255, 197, 198, 0.35);
+    padding-left: 15vw;
+    padding-right: 15vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#gameBoard div:first-of-type {
+    display: flex;
+
+    height: 50%;
+}
+
+#gameBoard div:nth-of-type(2) {
+    height: 50%;
+}
+
+
+
+.error-div {
+    position: absolute;
+    text-align: right;
 }
