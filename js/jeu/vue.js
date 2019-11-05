@@ -4,68 +4,78 @@ window.addEventListener("load", () => {
 
 
 function state() {
-    $.ajax({
-        url : "ajax-state.php",
-        type : "POST"
-    })
-    .done(function (msg) {
-	var reponse = JSON.parse(msg);
-
-	let playerHand = reponse.hand;
-
-	ajouterCarte(playerHand, "#handsCards");
-
-
-
-
-	console.log(reponse);
-
-    // traitement ici…
-
-    setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+	$.ajax({
+		url: "ajax-state.php",
+		type: "POST"
 	})
+		.done(function (msg) {
+			var reponse = JSON.parse(msg);
+
+			let playerHand = reponse.hand;
+
+			console.log(reponse);
+
+
+			clearGame();
+			ajouterCarte(playerHand, "#handsCards");
+			// traitement ici…
+
+			setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+		})
 }
 
 
-function ajouterCarte(tableau, conteneur)
-{
-	let template = document.querySelector("#card-Template").innerHTML;
-
-	for (i = 0; i<tableau.length; i++)
-	{
-		let newCard = Document.createElement("div");
-		newCard.innerHTML = template;
-		newCard.querySelector("h2").innerHTML = "Nom de la carte";
+function ajouterCarte(tableau, conteneur) {
 
 
-		document.querySelector(conteneur).appendChild(newCard);
+	// console.log(document.querySelector("#card-template"));
+
+	if (document.querySelector("#card-template") != null) {
+		console.log("AAAAAAAAAAAAAAA");
+		let template = document.querySelector("#card-template").innerHTML;
+
+
+		for (i = 0; i < tableau.length; i++) {
+			console.log("TEST");
+			let newCard = document.createElement("div");
+			newCard.onclick = () => {
+
+			}
+			newCard.innerHTML = template;
+
+			newCard.querySelector(".name").innerHTML = "Nom de la carte2";
+			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
+
+
+			document.querySelector(conteneur).appendChild(newCard);
+		}
 	}
 
 }
 
 
-function clearGame ()
-{
+function clearGame() {
 	// Pour tous les conteneurs
 	document.getElementById("handsCards").innerHTML = "";
-	document.getElementById("oponentCards").innerHTML = "";
-	document.getElementById("boardCard").innerHTML = "";
+	document.getElementById("opponentCards").innerHTML = "";
+	document.getElementById("playerCards").innerHTML = "";
+
 }
 
-function action(action, uId=null, uIdAttackedCard=null) {
+function action(action, uId = null, uIdAttackedCard = null) {
 	$.ajax({
-        url : "ajax-action.php",
-		type : "POST",
-		data : {
-			type : action,
-			UID : uId,
-			UIDAC : uIdAttackedCard
+		url: "ajax-action.php",
+		type: "POST",
+		data: {
+			type: action,
+			UID: uId,
+			UIDAC: uIdAttackedCard
 		}
-    })
-    .done(function (msg) {
-		console.log("Action:");
-		console.log(msg);
 	})
+		.done(function (msg) {
+			console.log("Action:");
+			console.log(msg);
+		})
 }
 
 const terminer = () => {

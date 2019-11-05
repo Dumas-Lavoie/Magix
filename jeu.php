@@ -55,7 +55,6 @@ if (isset($_SESSION["key"])) {
 			<div id="tempsJoueur">21</div>
 		</div>
 		<div id="handsCards">
-
 		</div>
 		<div id="playerButtons">
 			<button onclick="terminer()">Terminer son tour</button>
@@ -71,13 +70,14 @@ if (isset($_SESSION["key"])) {
 ?>
 
 <template id="card-template">
-				<div class='character'>
-					<div class='uid'></div>
-					<h2 class='name'></h2>
-					<div class='img'></div>
-					<div class='attack'></div>
-					<div class='hp'></div>
-				</div>
+	<div class='character'>
+		<div class='uid'></div>
+		<h2 class='name'></h2>
+		<div class='img'></div>
+		<div class='mecanics'></div>
+		<div class='attack'></div>
+		<div class='hp'></div>
+	</div>
 </template>
 </body>
 
