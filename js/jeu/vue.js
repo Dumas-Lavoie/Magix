@@ -46,9 +46,6 @@ function state() {
 
 function ajouterCarte(tableau, conteneur) {
 
-
-	// console.log(document.querySelector("#card-template"));
-
 	if (document.querySelector("#card-template") != null) {
 
 		let template = document.querySelector("#card-template").innerHTML;
@@ -130,9 +127,8 @@ const heroPower = () => {
 	action("HERO_POWER");
 }
 
-
-const addCard = () => {
-
+const heroAttack = () => {
+	action("ATTACK", selectedCard, 0);
 }
 
 
