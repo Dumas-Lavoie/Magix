@@ -70,8 +70,8 @@ if (isset($_SESSION["key"])) {
 
 <template id="card-template">
 	<div class='character'>
-		<div class='uid'></div>
 		<h2 class='name'></h2>
+		<div class='uid'></div>
 		<div class='img'></div>
 		<div class='mecanics'></div>
 		<div class='attack'></div>

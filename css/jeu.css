@@ -56,7 +56,11 @@
     display: flex;
     justify-content: space-around;
 
-    /* height: 50%; */
+    height: 50%;
+}
+
+#gameBoard div:first-of-type div {
+    height: 80%;
 }
 
 #gameBoard div:nth-of-type(2) {
@@ -65,7 +69,9 @@
     height: 50%;
 }
 
-
+#gameBoard div:nth-of-type(2) div {
+    height: 80%;
+}
 
 .error-div {
     position: absolute;
@@ -142,12 +148,12 @@
 
 .character {
 	border:1px solid white;
-    background-color:#555;
+    /* background-color:#555; */
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 150px;
 	padding:30px;
 	text-align:center;
 	margin:0 10px;
@@ -156,7 +162,7 @@
 }
 
 .character h2 {
-	/* margin-bottom:20px; */
+    /* margin-bottom:20px; */
 }
 
 .character .hp {
