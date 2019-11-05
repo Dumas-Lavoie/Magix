@@ -75,6 +75,7 @@ if (isset($_SESSION["key"])) {
 		<div class='img'></div>
 		<div class='mecanics'></div>
 		<div class='attack'></div>
+		<div class='cost'></div>
 		<div class='hp'></div>
 	</div>
 </template>

@@ -48,17 +48,22 @@ function ajouterCarte(tableau, conteneur) {
 		let template = document.querySelector("#card-template").innerHTML;
 
 
-		for (i = 0; i < tableau.length; i++) {
-			console.log("TEST");
+		for (let i = 0; i < tableau.length; i++) {
 			let newCard = document.createElement("div");
+			if (conteneur == "#handsCards")
+			{
+			let tUid = tableau[i].uid;
 			newCard.onclick = () => {
-
+				action("PLAY", tUid);
 			}
+		}
 			newCard.innerHTML = template;
 
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
-
+			newCard.querySelector(".attack").innerHTML = tableau[i].atk;
+			newCard.querySelector(".hp").innerHTML = tableau[i].hp;
+			newCard.querySelector(".cost").innerHTML = tableau[i].cost;
 
 			document.querySelector(conteneur).appendChild(newCard);
 		}
@@ -101,6 +106,7 @@ const heroPower = () => {
 
 
 const addCard = () => {
+
 }
 
 
