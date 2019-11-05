@@ -54,7 +54,7 @@
 
 #gameBoard div:first-of-type {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     height: 50%;
 }
@@ -147,25 +147,44 @@
 /* Le design des cartes ici!! */
 
 .character {
-	border:1px solid white;
+    border:1px solid white;
+    display: flex;
+    flex-direction: column;
     /* background-color:#555; */
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100px;
     height: 150px;
-	padding:30px;
-	text-align:center;
-	margin:0 10px;
+    padding:30px;
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 18px;
+	/* text-align:center; */
+    margin:0 10px;
 	transition: 1s;
 	box-shadow: 0 0 10px white;
 }
 
-.character h2 {
-    /* margin-bottom:20px; */
+
+.character .firstLine {
+    display: flex;
+    padding: 0;
 }
 
-.character .hp {
+
+.character h2 {
+    margin: 0;
+    margin-top: 6px;
+}
+
+.character .name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.character .cost {
 	margin-top:30px;
 	font-size:30px;
 	font-weight:bold;

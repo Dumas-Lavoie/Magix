@@ -69,14 +69,19 @@ if (isset($_SESSION["key"])) {
 ?>
 
 <template id="card-template">
+
 	<div class='character'>
-		<h2 class='name'></h2>
-		<div class='uid'></div>
+		<div class='firstLine'>
+			<h2 class='name'></h2>
+			<div class='hp'></div>
+		</div>
+
 		<div class='img'></div>
+		<!-- <div class='uid'></div> -->
 		<div class='mecanics'></div>
 		<div class='attack'></div>
 		<div class='cost'></div>
-		<div class='hp'></div>
+
 	</div>
 </template>
 </body>
