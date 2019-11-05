@@ -1,3 +1,8 @@
+#ecranJeu {
+    margin-bottom: 50px;
+}
+
+
 #opponentBoard {
     background-color: rgba(132, 197, 198, 0.35);
     height: 20vh;
@@ -39,8 +44,8 @@
 }
 
 #gameBoard {
-    height: 60vh;
-    background-color: rgba(255, 197, 198, 0.35);
+    height: 50vh;
+    /* background-color: rgba(255, 197, 198, 0.35); */
     padding-left: 15vw;
     padding-right: 15vw;
     display: flex;

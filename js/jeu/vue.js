@@ -5,12 +5,12 @@ window.addEventListener("load", () => {
 
 
 let cardNames = ['Canaries', 'Sprites', 'Garde inférieure',
-'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro',  'Pigs', 'noMoarPigs',
-'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
-'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
-'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
-'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
-'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
+	'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro', 'Pigs', 'noMoarPigs',
+	'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
+	'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
+	'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
+	'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
+	'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
 ]
 
 function state() {
@@ -22,6 +22,8 @@ function state() {
 			var reponse = JSON.parse(msg);
 
 			let playerHand = reponse.hand;
+			let playerBoard = reponse.board;
+			let opponentBoard = reponse.opponent.board;
 
 			console.log(reponse);
 
@@ -29,6 +31,8 @@ function state() {
 			clearGame();
 			updateValues(reponse);
 			ajouterCarte(playerHand, "#handsCards");
+			ajouterCarte(opponentBoard, "#opponentCards");
+			ajouterCarte(playerBoard, "#playerCards");
 
 
 			// traitement ici…
@@ -50,13 +54,18 @@ function ajouterCarte(tableau, conteneur) {
 
 		for (let i = 0; i < tableau.length; i++) {
 			let newCard = document.createElement("div");
-			if (conteneur == "#handsCards")
-			{
-			let tUid = tableau[i].uid;
-			newCard.onclick = () => {
-				action("PLAY", tUid);
+
+			if (conteneur == "#handsCards") {
+
+				let tUid = tableau[i].uid;
+
+				newCard.onclick = () => {
+
+					action("PLAY", tUid);
+
+				}
 			}
-		}
+
 			newCard.innerHTML = template;
 
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];

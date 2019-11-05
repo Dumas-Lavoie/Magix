@@ -49,8 +49,8 @@ if (isset($_SESSION["key"])) {
 		<div id="conteneurs">
 			<!-- En display flex vertical -->
 			<!-- Les trois conteneurs du joeur: temps, vie et mana -->
-			<div id="VieJoueur">18</div>
-			<div id="ManaJoueur">4</div>
+			<div id="VieJoueur">30</div>
+			<div id="ManaJoueur">1</div>
 			<div id="tempsJoueur">50</div>
 		</div>
 		<div id="handsCards">
