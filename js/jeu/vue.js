@@ -13,6 +13,8 @@ let cardNames = ['Canaries', 'Sprites', 'Garde inférieure',
 	'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
 ]
 
+let selectedCard = null;
+
 function state() {
 	$.ajax({
 		url: "ajax-state.php",
@@ -60,11 +62,26 @@ function ajouterCarte(tableau, conteneur) {
 				let tUid = tableau[i].uid;
 
 				newCard.onclick = () => {
-
 					action("PLAY", tUid);
+				}
+			}
+			else if (conteneur == "#opponentCards")
+			{
+				let tUid = tableau[i].uid;
+				newCard.onclick = () => {
+					if (selectedCard)
+					{
+						action("ATTACK", selectedCard, tUid);
+					}
 
 				}
 			}
+			else if (conteneur == "#playerCards")
+			 {
+				newCard.onclick = () => {
+					selectedCard = tableau[i].uid;
+				}
+			 }
 
 			newCard.innerHTML = template;
 
