@@ -4,10 +4,9 @@ window.addEventListener("load", () => {
 
 
 
-
-let cardNames = ['Canaries', 'Sprites', 'Garde inférieure', 
+let cardNames = ['Canaries', 'Sprites', 'Garde inférieure',
 'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro',  'Pigs', 'noMoarPigs',
-'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet', 
+'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
 'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
 'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
 'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',

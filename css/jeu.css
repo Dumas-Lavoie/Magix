@@ -78,6 +78,50 @@
 /* TEMPLATE POUR LES CARTES */
 
 /* Le container pour les cartes du joueur */
+#handsCards {
+    display: flex;
+}
+
+#playerBoard {
+    display: flex;
+}
+
+#conteneurs {
+    width: 80px;
+    margin-right: 0px;
+    text-align: center;
+    line-height: 5vh;
+}
+
+#VieJoueur {
+    background-image:url("../images/gameAssets/heartContainer.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    font-weight: bold;
+    color: rgb(167, 236, 121);
+}
+
+#ManaJoueur {
+    background-image:url("../images/gameAssets/crystalContainer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    line-height: 6vh;
+    font-weight: bold;
+    color: white;
+}
+
+#tempsJoueur {
+    background-image:url("../images/gameAssets/heartContainer.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    font-weight: bold;
+    color: rgb(167, 236, 121);
+}
+
+
 #lesCartesJoueur {
     display: flex;
 	align-items:stretch;
@@ -116,3 +160,8 @@
 canvas {
     z-index: -1;
 }
+
+
+
+
+/* Pouvoirs du héro */

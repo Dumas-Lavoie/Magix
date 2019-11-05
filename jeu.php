@@ -36,8 +36,6 @@ if (isset($_SESSION["key"])) {
 				<button id="boutonConnecte" name="deconnexion" type="submit">Se déconnecter!</button>
 			</form>
 		</div>
-
-
 	</div>
 	<div id="gameBoard">
 		<div id="opponentCards">
