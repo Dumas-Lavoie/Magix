@@ -56,7 +56,7 @@
     display: flex;
     justify-content: space-around;
 
-    height: 50%;
+    /* height: 50%; */
 }
 
 #gameBoard div:nth-of-type(2) {
@@ -75,7 +75,8 @@
 
 #playerBoard {
     height: 20vh;
-    background-color: rgba(227, 218, 218, 0.5)
+    background-color: rgba(227, 218, 218, 0.5);
+    margin-top: 50px;
 }
 
 
@@ -137,9 +138,16 @@
 	margin:50px auto;
 }
 
+/* Le design des cartes ici!! */
+
 .character {
 	border:1px solid white;
-	background-color:#555;
+    background-color:#555;
+    background-image: url(../images/gameAssets/tauntCardAsset.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 200px;
 	padding:30px;
 	text-align:center;
 	margin:0 10px;
@@ -148,7 +156,7 @@
 }
 
 .character h2 {
-	margin-bottom:20px;
+	/* margin-bottom:20px; */
 }
 
 .character .hp {
@@ -167,8 +175,3 @@
 canvas {
     z-index: -1;
 }
-
-
-
-
-/* Pouvoirs du héro */
