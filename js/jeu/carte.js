@@ -1,11 +1,22 @@
 
 
+let tab
+
+
 class Carte {
-    constructor(bgSrc) {
-        this.nom = "";
+    constructor(nom, img, cout) {
+        this.nom = nom;
         this.img = null;
-        this.cout = 0;
+        this.cout = cout;
         this.attaque = 0;
         this.ptsVie = 0;
     }
+
+     setImage(imgSrc) {
+        this.img = imgSrc;
+
+    }
 }
+
+
+// Pour la faire fonctionner, je crée une carte avec

@@ -3,6 +3,17 @@ window.addEventListener("load", () => {
 });
 
 
+
+
+let cardNames = ['Canaries', 'Sprites', 'Garde inférieure', 
+'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro',  'Pigs', 'noMoarPigs',
+'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet', 
+'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
+'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
+'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
+'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
+]
+
 function state() {
 	$.ajax({
 		url: "ajax-state.php",
@@ -31,7 +42,7 @@ function ajouterCarte(tableau, conteneur) {
 	// console.log(document.querySelector("#card-template"));
 
 	if (document.querySelector("#card-template") != null) {
-		console.log("AAAAAAAAAAAAAAA");
+
 		let template = document.querySelector("#card-template").innerHTML;
 
 
@@ -43,7 +54,7 @@ function ajouterCarte(tableau, conteneur) {
 			}
 			newCard.innerHTML = template;
 
-			newCard.querySelector(".name").innerHTML = "Nom de la carte2";
+			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
 
 
