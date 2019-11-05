@@ -27,7 +27,10 @@ function state() {
 
 
 			clearGame();
+			updateValues(reponse);
 			ajouterCarte(playerHand, "#handsCards");
+
+
 			// traitement ici…
 
 			setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
@@ -98,4 +101,17 @@ const heroPower = () => {
 
 
 const addCard = () => {
+}
+
+
+const updateValues = (reponse) => {
+	// Player
+	document.querySelector("#tempsJoueur").innerHTML = reponse.remainingTurnTime;
+	document.querySelector("#ManaJoueur").innerHTML = reponse.mp;
+	document.querySelector("#VieJoueur").innerHTML = reponse.hp;
+	// Opponent
+	document.querySelector("#OpponentLife").innerHTML = reponse.opponent.hp;
+	document.querySelector("#OpponentName").innerHTML = reponse.opponent.username;
+	document.querySelector("#OpponentMana").innerHTML = reponse.opponent.mp;
+	// document.querySelector("#OpponentWelcomeTxt").innerHTML = reponse.opponent.welcomeText;
 }

@@ -26,9 +26,10 @@ if (isset($_SESSION["key"])) {
 	<!-- BOARD -->
 	<div id="ecranJeu">
 		<div id="opponentBoard">
-			<div>10</div>
-			<div>Dummy AI</div>
-			<div>0</div>
+			<div id="OpponentLife">10</div>
+			<div id="OpponentName"></div>
+
+			<div id="OpponentMana">0</div>
 		</div>
 		<div id="connecte">
 			<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
@@ -50,7 +51,7 @@ if (isset($_SESSION["key"])) {
 			<!-- Les trois conteneurs du joeur: temps, vie et mana -->
 			<div id="VieJoueur">18</div>
 			<div id="ManaJoueur">4</div>
-			<div id="tempsJoueur">21</div>
+			<div id="tempsJoueur">50</div>
 		</div>
 		<div id="handsCards">
 		</div>

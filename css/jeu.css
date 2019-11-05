@@ -18,8 +18,8 @@
     line-height: 20vh;
     font-weight: bold;
     color: rgb(167, 236, 121);
-
 }
+
 #opponentBoard div:nth-of-type(2) {
     width: 40%;
     background-image:url("../images/gameAssets/bulle.png");
@@ -91,6 +91,7 @@
     margin-right: 0px;
     text-align: center;
     line-height: 5vh;
+    margin-left: 2vh;
 }
 
 #VieJoueur {
@@ -113,12 +114,13 @@
 }
 
 #tempsJoueur {
-    background-image:url("../images/gameAssets/heartContainer.gif");
+    background-image:url("../images/gameAssets/hourGlass.gif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 60px;
+    line-height: 3vh;
     font-weight: bold;
-    color: rgb(167, 236, 121);
+    color: black;
 }
 
 
