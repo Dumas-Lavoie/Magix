@@ -2,7 +2,6 @@
     margin-bottom: 50px;
 }
 
-
 #opponentBoard {
     background-color: rgba(132, 197, 198, 0.35);
     height: 20vh;
@@ -12,10 +11,10 @@
     justify-content: space-around;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
-
 }
+
 #opponentBoard div:first-of-type {
-    background-image:url("../images/gameAssets/heartContainer.gif");
+    background-image: url("../images/gameAssets/heartContainer.gif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 30%;
@@ -27,7 +26,7 @@
 
 #opponentBoard div:nth-of-type(2) {
     width: 40%;
-    background-image:url("../images/gameAssets/bulle.png");
+    background-image: url("../images/gameAssets/bulle.png");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -36,7 +35,7 @@
 
 #opponentBoard div:nth-of-type(3) {
     width: 30%;
-    background-image:url("../images/gameAssets/crystalContainer.png");
+    background-image: url("../images/gameAssets/crystalContainer.png");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -55,7 +54,6 @@
 #gameBoard div:first-of-type {
     display: flex;
     justify-content: space-between;
-
     height: 50%;
 }
 
@@ -78,18 +76,16 @@
     text-align: right;
 }
 
-
 #playerBoard {
     height: 20vh;
     background-color: rgba(227, 218, 218, 0.5);
     margin-top: 50px;
 }
 
-
-
 /* TEMPLATE POUR LES CARTES */
 
 /* Le container pour les cartes du joueur */
+
 #handsCards {
     display: flex;
 }
@@ -107,7 +103,7 @@
 }
 
 #VieJoueur {
-    background-image:url("../images/gameAssets/heartContainer.gif");
+    background-image: url("../images/gameAssets/heartContainer.gif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 60px;
@@ -116,7 +112,7 @@
 }
 
 #ManaJoueur {
-    background-image:url("../images/gameAssets/crystalContainer.png");
+    background-image: url("../images/gameAssets/crystalContainer.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 60px;
@@ -126,7 +122,7 @@
 }
 
 #tempsJoueur {
-    background-image:url("../images/gameAssets/hourGlass.gif");
+    background-image: url("../images/gameAssets/hourGlass.gif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 60px;
@@ -135,66 +131,105 @@
     color: black;
 }
 
-
 #lesCartesJoueur {
     display: flex;
-	align-items:stretch;
-	justify-content: center;
-	width:1000px;
-	margin:50px auto;
+    align-items: stretch;
+    justify-content: center;
+    width: 1000px;
+    margin: 50px auto;
 }
 
 /* Le design des cartes ici!! */
 
 .character {
-    border:1px solid white;
-    display: flex;
-    flex-direction: column;
-    /* background-color:#555; */
+    /* border:1px solid white; */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    /*16 divisions*/
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100px;
+    width: 120px;
     height: 150px;
-    padding:30px;
+    padding: 30px;
     padding-top: 0;
-    padding-left: 10px;
+    padding-left: 0;
     padding-right: 18px;
-	/* text-align:center; */
-    margin:0 10px;
-	transition: 1s;
-	box-shadow: 0 0 10px white;
+    /* text-align:center; */
+    margin: 0 10px;
+    transition: 1s;
+    box-shadow: 0 0 10px white;
 }
 
-
-.character .firstLine {
+/* .character .firstLine {
     display: flex;
     padding: 0;
-}
+} */
 
+/* <template id="card-template">
+	<div class='character'>
+		<h2 class='name'></h2>
+		<div class='hp'></div>
+		<div class='img'></div>
+		<div class='mecanics'></div>
+		<div class='attack'></div>
+		<div class='cost'></div>
+
+	</div>
+</template> */
 
 .character h2 {
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
     margin: 0;
+    margin-left: 26px;
     margin-top: 6px;
-}
-
-.character .name {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.7em;
     font-weight: bold;
 }
 
+.character .mecanics {
+    margin-top: 40px;
+    margin-left: 8px;
+    font-size: 0.6em;
+    grid-column: 1 / 4;
+    grid-row: 10 / 16;
+}
+
+.character .hp {
+    position: absolute;
+    display: none;
+}
+
+.character .attack {
+    position: absolute;
+    display: none;
+}
+
+
 .character .cost {
-	margin-top:30px;
-	font-size:30px;
-	font-weight:bold;
-	text-shadow: 0 0 14px black;
+    position: absolute;
+    grid-column: 1 / 1;
+    grid-row: 16 / 16;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 14px black;
+    color: white;
+}
+
+.character .imgMana {
+    position: absolute;
+
+
 }
 
 .character:hover {
-	cursor:pointer;
-	background-color:#999;
+    cursor: pointer;
+    background-color: #999;
     box-shadow: 0 0 10px #999;
+
 }
 
 canvas {

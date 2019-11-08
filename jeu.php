@@ -69,15 +69,11 @@ if (isset($_SESSION["key"])) {
 ?>
 
 <template id="card-template">
-
 	<div class='character'>
-		<div class='firstLine'>
-			<h2 class='name'></h2>
-			<div class='hp'></div>
-		</div>
-
+		<h2 class='name'></h2>
+		<img src="images\gameAssets\crystalContainer2.png" width="22px" height="22px" class='imgMana'>
+		<div class='hp'></div>
 		<div class='img'></div>
-		<!-- <div class='uid'></div> -->
 		<div class='mecanics'></div>
 		<div class='attack'></div>
 		<div class='cost'></div>

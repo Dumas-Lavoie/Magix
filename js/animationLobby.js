@@ -40,4 +40,4 @@ const redirectPratique = () => {
 
 const redirectOnline = () => {
     window.location.replace("redirectOnline.php");
-}
+}   
