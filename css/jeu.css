@@ -86,6 +86,9 @@
 
 /* Le container pour les cartes du joueur */
 
+
+/* Conteneurs pour le plateau de jeu */
+
 #handsCards {
     display: flex;
 }
@@ -101,6 +104,25 @@
     line-height: 5vh;
     margin-left: 2vh;
 }
+#playerCards
+{
+    width: 200px;
+}
+
+#gameBoard .cost, .hp {
+    height: 50px !important;
+}
+
+
+#gameBoard .character {
+
+    height: 242px !important;
+    width: 170px !important;
+    /* height:  !important; */
+}
+
+
+/*  FIN */
 
 #VieJoueur {
     background-image: url("../images/gameAssets/heartContainer.gif");
@@ -149,22 +171,22 @@
     /*16 divisions*/
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 140px;
-    height: 160px;
+    background-size: contain;
+    width: 150px;
+    height: 200px;
     /* padding: 30px; */
     padding-top: 0;
     padding-left: 0;
-    padding-right: 18px;
+    padding-right: 0;
     /* text-align:center; */
-    margin: 0 10px;
-    padding-bottom: 50px;
+
+    padding-bottom: 0;
     transition: 1s;
     box-shadow: 0 0 10px white;
 }
 
 .character h2 {
-    grid-column: 2 / 6;
+    grid-column: 1 / 6;
     grid-row: 1 / 2;
     margin: 0;
     margin-left: 26px;
@@ -176,11 +198,11 @@
 
 .character .mecanics {
     position: absolute;
-    margin-top: 40px;
-    margin-left: 8px;
-    font-size: 0.6em;
-    /* grid-column: 1 / 4; */
-    /* grid-row: 10 / 16; */
+    top: 20px;
+    /* margin-left: 8px; */
+    /* font-size: 0.6em; */
+    display: none;
+
 }
 
 .character .hp {
@@ -206,8 +228,6 @@
 
 .character .imgMana {
     position: absolute;
-
-
 }
 
 .character:hover {
