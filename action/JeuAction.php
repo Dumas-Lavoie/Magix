@@ -23,7 +23,7 @@ class JeuAction extends CommonAction
 
 		$data = [];
 		$data["key"] = $_SESSION["key"];
-		
+
 
 		if (isset($_SESSION["game"])) {
 
@@ -31,6 +31,18 @@ class JeuAction extends CommonAction
 			if ($_SESSION["game"] == "pratique") {
 
 				$data["type"] = "TRAINING";
+
+				$result = parent::callAPI("games/auto-match", $data);
+
+				// var_dump($result);
+				// exit();
+
+				if ($result == "DECK_INCOMPLETE") {
+				} else if ($result == "INVALID_GAME_TYPE") { } else if ($result == "INVALID_KEY") { } else { }
+			}
+			else if ($_SESSION["game"] == "online")
+			{
+				$data["type"] = "PVP";
 
 				$result = parent::callAPI("games/auto-match", $data);
 
@@ -56,9 +68,9 @@ class JeuAction extends CommonAction
 			echo "TEST";
 			exit();
 			// remove all session variables
-			session_unset(); 
-			// destroy the session 
-			session_destroy(); 
+			session_unset();
+			// destroy the session
+			session_destroy();
 		} else {
 			var_dump("ERREUR DE DÉCONNEXION");
 		}

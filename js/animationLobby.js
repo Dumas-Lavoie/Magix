@@ -37,3 +37,7 @@ const tick = () => {
 const redirectPratique = () => {
     window.location.replace("redirectPratique.php");
 }
+
+const redirectOnline = () => {
+    window.location.replace("redirectOnline.php");
+}
