@@ -150,34 +150,18 @@
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 120px;
-    height: 150px;
-    padding: 30px;
+    width: 140px;
+    height: 160px;
+    /* padding: 30px; */
     padding-top: 0;
     padding-left: 0;
     padding-right: 18px;
     /* text-align:center; */
     margin: 0 10px;
+    padding-bottom: 50px;
     transition: 1s;
     box-shadow: 0 0 10px white;
 }
-
-/* .character .firstLine {
-    display: flex;
-    padding: 0;
-} */
-
-/* <template id="card-template">
-	<div class='character'>
-		<h2 class='name'></h2>
-		<div class='hp'></div>
-		<div class='img'></div>
-		<div class='mecanics'></div>
-		<div class='attack'></div>
-		<div class='cost'></div>
-
-	</div>
-</template> */
 
 .character h2 {
     grid-column: 2 / 6;
@@ -191,11 +175,12 @@
 }
 
 .character .mecanics {
+    position: absolute;
     margin-top: 40px;
     margin-left: 8px;
     font-size: 0.6em;
-    grid-column: 1 / 4;
-    grid-row: 10 / 16;
+    /* grid-column: 1 / 4; */
+    /* grid-row: 10 / 16; */
 }
 
 .character .hp {
@@ -229,6 +214,7 @@
     cursor: pointer;
     background-color: #999;
     box-shadow: 0 0 10px #999;
+    transition: 1s;
 
 }
 
