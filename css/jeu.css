@@ -44,26 +44,36 @@
 
 #gameBoard {
     height: 50vh;
-    /* background-color: rgba(255, 197, 198, 0.35); */
     padding-left: 15vw;
     padding-right: 15vw;
     display: flex;
     flex-direction: column;
 }
+#gameBoard div div {
+    margin-right: 20px;
+}
 
-#gameBoard div:first-of-type {
+#gameBoard > div:first-child {
+    margin-bottom: 30px;
+}
+
+#gameBoard div:last-child {
+    margin-right: 0;
+}
+
+#gameBoard > div:first-of-type {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 50%;
 }
 
-#gameBoard div:first-of-type div {
+#gameBoard > div:first-of-type div {
     height: 80%;
 }
 
 #gameBoard div:nth-of-type(2) {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     height: 50%;
 }
 
@@ -109,17 +119,26 @@
     width: 200px;
 }
 
-#gameBoard .cost, .hp {
-    height: 50px !important;
+#gameBoard #opponentCards .cost, .hp, .attack {
+    height: 20px;
 }
 
+#gameBoard #playerCards .cost, .hp, .attack {
+    height: 20px;
+}
 
-#gameBoard .character {
-
-    height: 242px !important;
-    width: 170px !important;
+#gameBoard #opponentCards .character {
+    height: 240px;
+    width: 170px;
     /* height:  !important; */
 }
+
+#gameBoard #playerCards .character {
+    height: 242px;
+    width: 170px;
+    /* height:  !important; */
+}
+
 
 
 /*  FIN */
@@ -166,21 +185,16 @@
 .character {
     /* border:1px solid white; */
     display: grid;
+    position: relative;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    /*16 divisions*/
+    
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 150px;
+    width: 143px;
     height: 200px;
-    /* padding: 30px; */
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    /* text-align:center; */
-
-    padding-bottom: 0;
+    margin-right: 20px;
     transition: 1s;
     box-shadow: 0 0 10px white;
 }
@@ -198,28 +212,33 @@
 
 .character .mecanics {
     position: absolute;
-    top: 20px;
-    /* margin-left: 8px; */
-    /* font-size: 0.6em; */
-    display: none;
-
+    font-size: 0.7em;
+    top: 120px;
+    left: 15px;
+    right: 30px;
 }
 
 .character .hp {
     position: absolute;
-    display: none;
+    top: 170px;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 0 0 14px yellow;
 }
 
 .character .attack {
     position: absolute;
-    display: none;
+    left: 125px;
+    top: 170px;
+    font-size: 30px;
+    font-weight: bold;
+    color: lightyellow;
+    text-shadow: 0 0 14px red;
 }
-
 
 .character .cost {
     position: absolute;
-    grid-column: 1 / 1;
-    grid-row: 16 / 16;
     font-size: 30px;
     font-weight: bold;
     text-shadow: 0 0 14px black;

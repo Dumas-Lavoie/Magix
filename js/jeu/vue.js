@@ -13,6 +13,15 @@ let cardNames = ['Canaries', 'Sprites', 'Garde inférieure',
 	'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
 ]
 
+
+let imgCardsNames = ['Canaries', 'Sprites', 'Garde inférieure',
+'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro', 'Pigs', 'noMoarPigs',
+'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
+'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
+'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
+'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
+'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE']
+
 let selectedCard = null;
 
 function state() {
@@ -83,10 +92,12 @@ function ajouterCarte(tableau, conteneur) {
 			newCard.innerHTML = template;
 
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
+			newCard.querySelector(".img").style.backgroundImage = "url("+imgCardsNames[tablea[i].id]+")";
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
 			newCard.querySelector(".attack").innerHTML = tableau[i].atk;
 			newCard.querySelector(".hp").innerHTML = tableau[i].hp;
 			newCard.querySelector(".cost").innerHTML = tableau[i].cost;
+
 
 			document.querySelector(conteneur).appendChild(newCard);
 		}
