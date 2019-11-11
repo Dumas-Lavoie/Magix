@@ -5,12 +5,12 @@ window.addEventListener("load", () => {
 
 
 let cardNames = ['canaries', 'sprites', 'Garde inférieure',
-	'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Ashitaka_shot', 'boh transformé',
+	'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Ashitaka shot', 'boh transformé',
 	'Casse', 'Catbus', 'Chihiro', 'Essaim', 'Faux Boh',
-	'Forest spirit', 'Apparition', 'Garnouille', 'MagieBleue', 'NoTrain',
-	'DragonRide', 'Banquet', 'Haku', 'Haku Dragon', 'Wizard',
+	'Forest god', 'Apparition', 'Garnouille', 'Magie bleue', 'No train',
+	'Dragon ride', 'Banquet', 'Haku', 'Haku dragon', 'Wizard',
 	'Magicienne', 'Lill Totoro', 'Jiji Kiki', 'Kamaji', 'Kiki',
-	'ForestSpirit', "Preparation", 'Robot', 'LeJugement', 'Lin', 'Monstre élémentaire',
+	'Forest spirit', "Preparation", 'Robot', 'LeJugement', 'Lin', 'Monstre élémentaire',
 	'Nausicaa', 'No Face', 'noMoarPigs', 'pigs', 'Porco Rosso', 'Protection rock', 'Run',
 	'Spectral', 'Deamon', 'Teto', 'Harry Potter', 'Ville Des Spectres', 'Yakul', 'Yakul ride',
 	'Yubaba', 'Zeniba'
@@ -39,28 +39,41 @@ function state() {
 		.done(function (msg) {
 			var reponse = JSON.parse(msg);
 
-			let playerHand = reponse.hand;
-			let playerBoard = reponse.board;
-			let opponentBoard = reponse.opponent.board;
+			if (reponse != 'LAST_GAME_WON' && reponse != 'LAST_GAME_LOST') {
 
-			console.log(reponse);
+				let playerHand = reponse.hand;
+				let playerBoard = reponse.board;
+				let opponentBoard = reponse.opponent.board;
+
+				// console.log(reponse);
+
+				// traitement ici…
+				clearGame();
+				updateValues(reponse);
+				ajouterCarte(playerHand, "#handsCards", reponse);
+				ajouterCarte(opponentBoard, "#opponentCards");
+				ajouterCarte(playerBoard, "#playerCards");
 
 
-			clearGame();
-			updateValues(reponse);
-			ajouterCarte(playerHand, "#handsCards", reponse);
-			ajouterCarte(opponentBoard, "#opponentCards", null);
-			ajouterCarte(playerBoard, "#playerCards", null);
+				setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+			}
 
+			else {
 
-			// traitement ici…
-
-			setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+				if (reponse == 'LAST_GAME_WON') {
+					document.querySelector("#gameOverWin").style.display = "block";
+				}
+				
+				else if (reponse == 'LAST_GAME_LOST') {
+					document.querySelector("#gameOverLost").style.display = "block";
+				}
+				setTimeout(redirectLobbyDelay, 10000);
+			}
 		})
 }
 
 
-function ajouterCarte(tableau, conteneur, infos) {
+function ajouterCarte(tableau, conteneur, infos =null) {
 
 	if (document.querySelector("#card-template") != null) {
 
@@ -103,7 +116,7 @@ function ajouterCarte(tableau, conteneur, infos) {
 					if (infos.mp >= tableau[i].cost) {
 						newCard.querySelector(".character").style.animation = "cartesJouables 20s infinite";
 					}
-					
+
 					// Effet sur le bouton du pouvoir du héro (si il peut être activé)
 					if (infos.mp >= 2 && !infos.heroPowerAlreadyUsed) {
 						document.querySelector("#heroPower").style.animation = "boutonPouvoirHero 2s infinite";
@@ -122,18 +135,14 @@ function ajouterCarte(tableau, conteneur, infos) {
 			catch {
 			}
 
-			
-			// Si la carte est taunt; elle a droit à une bordure dorée
-			// console.log(tableau[i].mechanics.)
-			
-			if (tableau[i].mechanics.includes("Taunt"))
-			{
+
+			// Si la carte est taunt; elle a droit à une carte avec une bordure dorée
+			if (tableau[i].mechanics.includes("Taunt")) {
 				newCard.querySelector(".character").style.backgroundImage = "url(images/gameAssets/tauntCardAsset.png)";
-				
+
 			}
-			else 
-			{
-				
+			else {
+
 				newCard.querySelector(".name").style.color = "silver";
 				newCard.querySelector(".character").style.backgroundImage = "url(images/gameAssets/lambdaCardAsset.png)";
 			}
@@ -171,8 +180,7 @@ function action(action, uId = null, uIdAttackedCard = null) {
 		}
 	})
 		.done(function (msg) {
-			console.log("Action:");
-			console.log(msg);
+			// N/A
 		})
 }
 
@@ -208,4 +216,9 @@ const updateValues = (reponse) => {
 		document.querySelector("#playerBoard").style.border = "none";
 		document.querySelector("#opponentBoard").style.border = "solid";
 	}
+}
+
+
+const redirectLobbyDelay = () => {
+	window.location.replace("lobby.php");
 }

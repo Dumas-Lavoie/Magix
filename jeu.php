@@ -20,14 +20,16 @@ if (isset($_GET["deconnexion"])) {
 }
 if (isset($_SESSION["key"])) {
 	?>
-	<!-- <script></script> -->
+	<!-- Background -->
 	<canvas id="canvas" width="1200" height="900"></canvas>
 
+	<!-- Écran game over -->
+	<div id="gameOverLost"><h2>Vous avez perdu!<h2></div>
+	<div id="gameOverWin"><h2>Vous avez gagné!<h2></div>
 	<!-- BOARD -->
 	<div id="ecranJeu">
 		<div id="opponentBoard">
 			<div id="OpponentLife"></div>
-			
 			<div id="OpponentName" onclick="heroAttack()">
 			</div>
 			

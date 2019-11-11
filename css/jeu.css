@@ -292,3 +292,42 @@ canvas {
     from {background-color: white;}
     to {background-color: grey;}
   }
+
+
+/* Écran de gameOver */
+
+#gameOverWin {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 30vh;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    background-image: url("../images/cards/21Banquet.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+}
+
+#gameOverLost {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 30vh;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    background-image: url("../images/cards/14faux Boh.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+}
+
+
