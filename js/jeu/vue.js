@@ -4,23 +4,30 @@ window.addEventListener("load", () => {
 
 
 
-let cardNames = ['Canaries', 'Sprites', 'Garde inférieure',
-	'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro', 'Pigs', 'noMoarPigs',
-	'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
-	'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
-	'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
-	'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
-	'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE'
-]
+let cardNames = ['canaries', 'sprites', 'Garde inférieure',
+'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Ashitaka_shot', 'boh transformé',
+'Casse', 'Catbus', 'Chihiro', 'Essaim', 'Faux Boh',
+'Forest spirit', 'Apparition', 'Garnouille', 'MagieBleue', 'NoTrain',
+'DragonRide', 'Banquet', 'Haku', 'Haku Dragon', 'Wizard',
+'Magicienne', 'Lill Totoro', 'Jiji Kiki', 'Kamaji', 'Kiki',
+'ForestSpirit', "Preparation", 'Robot', 'LeJugement', 'Lin', 'Monstre élémentaire',
+'Nausicaa', 'No Face', 'noMoarPigs', 'pigs', 'Porco Rosso', 'Protection rock', 'Run', 
+'Spectral', 'Deamon', 'Teto', 'Harry Potter', 'Ville Des Spectres', 'Yakul', 'Yakul ride',
+'Yubaba', 'Zeniba'
+  ]
 
 
-let imgCardsNames = ['Canaries', 'Sprites', 'Garde inférieure',
-'Boh', 'Charge mineure', 'Aniyaku', 'Chichiyaku', 'Chihiro', 'Pigs', 'noMoarPigs',
-'Frog n Gold', 'Sorcier de défense', 'Haku', 'NOFX (no face)', 'Le banquet',
-'Dragon', 'Dragon charge', 'Yubaba', 'Boh transformé', 'Préparation',
-'No face is watching', 'Dragon charge', 'Lin', 'Kamaji', 'Monstre élémentaire',
-'Run', "Le jugement.", 'Surveillance active', 'Protection rock', 'Apparition', 'Préparation',
-'Essaim', 'Le repenti', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE', 'TEST', 'TESTE']
+let imgCardsNames = ['01canaries.gif', '02sprites.gif', '03Garde inférieure.gif',
+'04Boh.gif', '05Charge mineure.gif', '06Aniyaku.png', '07Chichiyaku.png', '08Ashitaka_shot.gif', '09bohTransforme.gif',
+'10casse.gif', '11catbus.jpg', '12Chihiro.jpg', '13essaim.gif', '14faux Boh.gif',
+'15Forest_Spirit.jpg', '16Apparition.gif', '17Garnouille.gif', '18MagieBleue.gif', '19NoTrain.gif',
+'20DragonRide.gif', '21Banquet.gif', '22Haku.jpg', '23hakuDragon.gif', '24Wizard.jpg',
+'25Magicienne.jpg', '26LillTotoro.jpg', '27jiji-kiki.png', '28Kamaji.gif', '29kiki.jpg',
+'30ForestSpirit.jpg', "31laPreparation.gif", '32Robot.jpg', '33LeJugement.gif', '34Lin.jpg', '35monstre elementaire.gif',
+'36nausicaa.jpg', '37No_Face_.png', '38noMoarPigs.gif', '39pigs.png', '40porco-rosso.jpg', '41Protection rock.gif', '42run.gif', 
+'43Spectral.jpg', '44Deamon.jpg', '45teto.jpg', '46HarryPotter.jpg', '47VilleDesSpectres.jpg', '48Yakul.jpg', '49YakulRide.jpg',
+'50Yubaba.png', '51Zeniba.png'
+  ]
 
 let selectedCard = null;
 
@@ -92,7 +99,7 @@ function ajouterCarte(tableau, conteneur) {
 			newCard.innerHTML = template;
 
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
-			newCard.querySelector(".img").style.backgroundImage = "url("+imgCardsNames[tablea[i].id]+")";
+			newCard.querySelector(".img").style.backgroundImage = "url(\"images/cards/"+imgCardsNames[tableau[i].id]+"\")";
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
 			newCard.querySelector(".attack").innerHTML = tableau[i].atk;
 			newCard.querySelector(".hp").innerHTML = tableau[i].hp;
