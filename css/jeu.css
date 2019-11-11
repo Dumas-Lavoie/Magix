@@ -63,7 +63,6 @@
 
 #gameBoard > div:first-of-type {
     display: flex;
-    /* justify-content: space-between; */
     height: 50%;
 }
 
@@ -73,7 +72,6 @@
 
 #gameBoard div:nth-of-type(2) {
     display: flex;
-    /* justify-content: space-around; */
     height: 50%;
 }
 
@@ -88,7 +86,7 @@
 
 #playerBoard {
     height: 20vh;
-    background-color: rgba(227, 218, 218, 0.5);
+    background-color: rgba(227, 218, 218, 0.2);
     margin-top: 50px;
 }
 
@@ -128,18 +126,18 @@
 }
 
 #gameBoard #opponentCards .character {
-    height: 240px;
-    width: 170px;
-    /* height:  !important; */
+    height: 200px;
+    width: 143px;
 }
 
 #gameBoard #playerCards .character {
-    height: 242px;
-    width: 170px;
-    /* height:  !important; */
+    height: 200px;
+    width: 143px;
 }
 
-
+#gameBoard .character > .img {
+    height: 90px;
+}
 
 /*  FIN */
 
@@ -183,12 +181,8 @@
 /* Le design des cartes ici!! */
 
 .character {
-    /* border:1px solid white; */
     display: grid;
     position: relative;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    
     background-image: url(../images/gameAssets/tauntCardAsset.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -228,14 +222,14 @@
 }
 
 .character .img {
-    top: 20px;
-    left: 15px;
-    right: 15px;
+    top: 19px;
+    left: 17px;
+    right: 22px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     position: absolute;
-    width: 110px;
+    width: 109px;
     height: 90px;
     z-index: 0;
 }
@@ -256,10 +250,13 @@
     font-weight: bold;
     text-shadow: 0 0 14px black;
     color: white;
+    z-index: 1;
 }
 
 .character .imgMana {
     position: absolute;
+    top: 2px;
+    z-index: 1;
 }
 
 .character:hover {
