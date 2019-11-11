@@ -103,6 +103,12 @@ function ajouterCarte(tableau, conteneur, infos) {
 					if (infos.mp >= tableau[i].cost) {
 						newCard.querySelector(".character").style.animation = "cartesJouables 20s infinite";
 					}
+					if (infos.mp >= 2 && !infos.heroPowerAlreadyUsed) {
+						document.querySelector("#heroPower").style.animation = "boutonDispo 2s infinite";
+					}
+					else {
+						document.querySelector("#heroPower").style.animation = "none";
+					}
 				}
 			}
 			catch {
@@ -110,7 +116,7 @@ function ajouterCarte(tableau, conteneur, infos) {
 
 
 			// Effet sur le bouton du pouvoir du héro (si il peut être activé)
-			// document.querySelector("#heroPower").style. = "";
+			
 
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
 			newCard.querySelector(".img").style.backgroundImage = "url(\"images/cards/" + imgCardsNames[tableau[i].id] + "\")";
