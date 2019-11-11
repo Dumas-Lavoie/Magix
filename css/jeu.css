@@ -16,7 +16,7 @@
 #OpponentCards {
     position: absolute;
     left: 70%;
-    top: 121px;
+    top: 158px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -190,7 +190,7 @@
 .character {
     display: grid;
     position: relative;
-    background-image: url(../images/gameAssets/tauntCardAsset.png);
+    background-image: url(../images/gameAssets/anotherCardAsset.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 143px;
@@ -201,10 +201,8 @@
 }
 
 .character h2 {
-    grid-column: 1 / 6;
-    grid-row: 1 / 2;
     margin: 0;
-    margin-left: 26px;
+    margin-left: 30px;
     margin-top: 6px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.7em;
@@ -285,7 +283,12 @@ canvas {
     to {bottom: 200px;}
   }
 
-@keyframes boutonDispo {
+@keyframes boutonPouvoirHero {
     from {background-color: green;}
     to {background-color: greenyellow;}
+  }
+
+@keyframes boutonFinTour {
+    from {background-color: white;}
+    to {background-color: grey;}
   }

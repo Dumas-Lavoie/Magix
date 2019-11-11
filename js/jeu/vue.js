@@ -103,21 +103,40 @@ function ajouterCarte(tableau, conteneur, infos) {
 					if (infos.mp >= tableau[i].cost) {
 						newCard.querySelector(".character").style.animation = "cartesJouables 20s infinite";
 					}
+					
+					// Effet sur le bouton du pouvoir du héro (si il peut être activé)
 					if (infos.mp >= 2 && !infos.heroPowerAlreadyUsed) {
-						document.querySelector("#heroPower").style.animation = "boutonDispo 2s infinite";
+						document.querySelector("#heroPower").style.animation = "boutonPouvoirHero 2s infinite";
 					}
 					else {
 						document.querySelector("#heroPower").style.animation = "none";
+					}
+					if (infos.yourTurn) {
+						document.querySelector("#terminerTour").style.animation = "boutonFinTour 2s infinite";
+					}
+					else {
+						document.querySelector("#terminerTour").style.animation = "none";
 					}
 				}
 			}
 			catch {
 			}
 
-
-			// Effet sur le bouton du pouvoir du héro (si il peut être activé)
 			
-
+			// Si la carte est taunt; elle a droit à une bordure dorée
+			// console.log(tableau[i].mechanics.)
+			
+			if (tableau[i].mechanics.includes("Taunt"))
+			{
+				newCard.querySelector(".character").style.backgroundImage = "url(images/gameAssets/tauntCardAsset.png)";
+				
+			}
+			else 
+			{
+				
+				newCard.querySelector(".name").style.color = "silver";
+				newCard.querySelector(".character").style.backgroundImage = "url(images/gameAssets/lambdaCardAsset.png)";
+			}
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
 			newCard.querySelector(".img").style.backgroundImage = "url(\"images/cards/" + imgCardsNames[tableau[i].id] + "\")";
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;

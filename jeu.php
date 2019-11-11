@@ -26,7 +26,7 @@ if (isset($_SESSION["key"])) {
 	<!-- BOARD -->
 	<div id="ecranJeu">
 		<div id="opponentBoard">
-			<div id="OpponentLife">10</div>
+			<div id="OpponentLife"></div>
 			
 			<div id="OpponentName" onclick="heroAttack()">
 			</div>
@@ -59,7 +59,7 @@ if (isset($_SESSION["key"])) {
 		<div id="handsCards">
 		</div>
 		<div id="playerButtons">
-			<button onclick="terminer()">Terminer son tour</button>
+			<button onclick="terminer()" id='terminerTour'>Terminer son tour</button>
 			<button onclick="heroPower()" id='heroPower'>Pouvoir du héro</button>
 		</div>
 
