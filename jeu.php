@@ -27,7 +27,8 @@ if (isset($_SESSION["key"])) {
 	<div id="ecranJeu">
 		<div id="opponentBoard">
 			<div id="OpponentLife">10</div>
-			<div id="OpponentName" onclick="heroAttack()"></div>
+			<div id="OpponentName" onclick="heroAttack()">
+			</div>
 
 			<div id="OpponentMana">0</div>
 		</div>

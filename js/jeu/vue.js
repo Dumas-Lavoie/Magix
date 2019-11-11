@@ -158,6 +158,18 @@ const updateValues = (reponse) => {
 	// Opponent
 	document.querySelector("#OpponentLife").innerHTML = reponse.opponent.hp;
 	document.querySelector("#OpponentName").innerHTML = reponse.opponent.username;
+	// document.querySelector("#OpponentCardNumber").innerHTML = reponse.opponent.handSize +" cartes";
 	document.querySelector("#OpponentMana").innerHTML = reponse.opponent.mp;
+
+	if (reponse.yourTurn)
+	{
+		document.querySelector("#playerBoard").style.border = "solid";
+		document.querySelector("#opponentBoard").style.border = "none";
+	}
+	else 
+	{
+		document.querySelector("#playerBoard").style.border = "none";
+		document.querySelector("#opponentBoard").style.border = "solid";
+	}
 	// document.querySelector("#OpponentWelcomeTxt").innerHTML = reponse.opponent.welcomeText;
 }
