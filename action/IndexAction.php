@@ -26,7 +26,9 @@ class IndexAction extends CommonAction
 			} else {
 				// Pour voir les informations retournées : var_dump($result);exit;
 				$this->estConnecte = true;
-				// var_dump($result);exit;
+				$nom_cookie = "MagixUsername";
+				$valeur_cookie = $data["username"];
+				setcookie($nom_cookie, $valeur_cookie, time() + (86400 * 30), "/"); // 86400 = 1 day
 				$this->key = $result->key;
 				$_SESSION["key"] = $result->key;
 				$_SESSION["visibility"] = parent::$VISIBILITY_MEMBER;
@@ -34,6 +36,7 @@ class IndexAction extends CommonAction
 				exit();
 			}
 		}
+
 	}
 
 	public function logout()

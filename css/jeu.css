@@ -13,6 +13,13 @@
     font-size: 2em;
 }
 
+#OpponentCards {
+    position: absolute;
+    left: 70%;
+    top: 121px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #opponentBoard div:first-of-type {
     background-image: url("../images/gameAssets/heartContainer.gif");
     background-repeat: no-repeat;
@@ -270,3 +277,10 @@
 canvas {
     z-index: -1;
 }
+
+/* Animations CSS */
+
+@keyframes cartesJouables {
+    from {bottom: 0px;}
+    to {bottom: 200px;}
+  }

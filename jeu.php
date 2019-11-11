@@ -27,10 +27,12 @@ if (isset($_SESSION["key"])) {
 	<div id="ecranJeu">
 		<div id="opponentBoard">
 			<div id="OpponentLife">10</div>
+			
 			<div id="OpponentName" onclick="heroAttack()">
 			</div>
-
+			
 			<div id="OpponentMana">0</div>
+			<div id="OpponentCards"></div>
 		</div>
 		<div id="connecte">
 			<div class="error-div"><strong>Vous êtes connecté : </strong>Connexion réussie</div>
@@ -58,7 +60,7 @@ if (isset($_SESSION["key"])) {
 		</div>
 		<div id="playerButtons">
 			<button onclick="terminer()">Terminer son tour</button>
-			<button onclick="heroPower()">Pouvoir du héro</button>
+			<button onclick="heroPower()" id='heroPower'>Pouvoir du héro</button>
 		</div>
 
 	</div>
@@ -70,7 +72,7 @@ if (isset($_SESSION["key"])) {
 ?>
 
 <template id="card-template">
-	<div class='character'>
+	<div class='character' id='animationCarte'>
 		<h2 class='name'></h2>
 		<img src="images\gameAssets\crystalContainer2.png" width="22px" height="22px" class='imgMana'>
 		<div class='hp'></div>

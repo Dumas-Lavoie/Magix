@@ -32,7 +32,7 @@
 			?>
 
 	<div id="logScreen">
-	<h1>Magix</h1>
+	<h1>Ghibli Magix</h1>
 	<form action="index.php" method="post">
 			<?php
 			if ($action->wrongLogin) {
@@ -44,7 +44,12 @@
 
 
 		<div class="logElement">Nom d'usager</div>
-		<input type="text" name="username" placeholder="Username">
+		<input type="text" name="username" placeholder="Username"
+		value="<?php 
+				if(isset($_COOKIE['MagixUsername'])) {
+					echo  $_COOKIE['MagixUsername'];
+				} 
+		?>">
 		<div class="logElement">Mot de passe</div>
 		<input type="password" name="password" placeholder="Password">
 		<div></div>
