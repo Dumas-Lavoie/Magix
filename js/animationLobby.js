@@ -13,8 +13,8 @@ window.addEventListener("load", () => {
 
 	$('body').css('background-image', 'url(images/background2.gif)')
 	$('body').css('background-size', 'cover');
-	$('body').css('background-repeat', 'no-repeat');
-	// $('body').css('width', '100%');
+    $('body').css('background-repeat', 'no-repeat');
+    
     tick();
 });
 

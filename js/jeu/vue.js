@@ -67,6 +67,7 @@ function state() {
 				else if (reponse == 'LAST_GAME_LOST') {
 					document.querySelector("#gameOverLost").style.display = "block";
 				}
+				// 10 secondes avant le retour au lobby
 				setTimeout(redirectLobbyDelay, 10000);
 			}
 		})
@@ -146,8 +147,16 @@ function ajouterCarte(tableau, conteneur, infos =null) {
 				newCard.querySelector(".name").style.color = "silver";
 				newCard.querySelector(".character").style.backgroundImage = "url(images/gameAssets/lambdaCardAsset.png)";
 			}
+			if (i <=cardNames.length )
+			{			
 			newCard.querySelector(".name").innerHTML = cardNames[tableau[i].id];
 			newCard.querySelector(".img").style.backgroundImage = "url(\"images/cards/" + imgCardsNames[tableau[i].id] + "\")";
+			}
+			else {
+			newCard.querySelector(".name").innerHTML = "unknown";
+			newCard.querySelector(".img").style.backgroundImage = "";			
+			}
+
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
 			newCard.querySelector(".attack").innerHTML = tableau[i].atk;
 			newCard.querySelector(".hp").innerHTML = tableau[i].hp;
