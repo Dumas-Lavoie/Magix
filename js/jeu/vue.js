@@ -41,7 +41,70 @@ let imgCardsNames = ['01canaries.gif', '02sprites.gif', '03Garde inférieure.gif
 
 let selectedCard = null;
 
-function state() {
+
+const state = () => {
+	fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+ method : "POST",       // l’API (games/state)
+credentials: "include"
+})
+.then(response => response.json())
+.then(data => {
+
+	console.log(data); // contient les cartes/état du jeu.
+
+	
+
+	if (data == 'WAITING') {
+		console.log("ATTENTE...");
+	}
+	else if (data != 'LAST_GAME_WON' && data != 'LAST_GAME_LOST') {
+		
+
+		let playerHand = data.hand;
+		let playerBoard = data.board;
+		let opponentBoard = data.opponent.board;
+
+		console.log(data);
+
+
+
+		// traitement ici…
+		clearGame();
+		updateValues(data);
+		ajouterCarte(playerHand, "#handsCards", data);
+		ajouterCarte(opponentBoard, "#opponentCards");
+		ajouterCarte(playerBoard, "#playerCards");
+	}
+	else if (data == 'LAST_GAME_WON') {
+		document.querySelector("#gameOverWin").style.display = "block";
+		setTimeout(redirectLobbyDelay, 10000);
+	}
+	else if (data == 'LAST_GAME_LOST') {
+		document.querySelector("#gameOverLost").style.display = "block";
+		setTimeout(redirectLobbyDelay, 10000);
+	}
+	else {
+		console.log("ERROR");
+	}
+	
+
+
+	setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+})}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function state() {
 	$.ajax({
 		url: "ajax-state.php",
 		type: "POST"
@@ -49,8 +112,9 @@ function state() {
 		.done(function (msg) {
 			var reponse = JSON.parse(msg);
 
+			console.log("LAST PARSE:" + msg);
 
-			if (reponse != 'LAST_GAME_WON' && reponse != 'LAST_GAME_LOST' && reponse !='WAITING' && reponse.opponent.board != null) {
+			if (reponse != 'LAST_GAME_WON' && reponse != 'LAST_GAME_LOST' && reponse !='WAITING') {
 				
 				let playerHand = reponse.hand;
 				let playerBoard = reponse.board;
@@ -90,7 +154,7 @@ function state() {
 			}
 			}
 		})
-}
+}*/
 
 
 function ajouterCarte(tableau, conteneur, infos =null) {
