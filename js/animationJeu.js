@@ -4,7 +4,7 @@ let spriteList = [];
 
 
 window.addEventListener("load", () => {
-	document.querySelector("body").background;
+	//document.querySelector("body").background;
 	document.querySelector("canvas").style.position = "absolute"
     canvas = document.querySelector("canvas");
     ctx = canvas.getContext("2d");

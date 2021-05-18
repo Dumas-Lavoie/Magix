@@ -22,7 +22,7 @@ if (isset($_SESSION["key"])) {
 	?>
 	<!-- Background -->
 	<canvas id="canvas" width="1200" height="900"></canvas>
-
+	
 	<!-- Écran game over -->
 	<div id="gameOverLost"><h2>Vous avez perdu!<h2></div>
 	<div id="gameOverWin"><h2>Vous avez gagné!<h2></div>

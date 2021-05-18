@@ -13,7 +13,11 @@ let cardNames = ['canaries', 'sprites', 'Garde inférieure',
 	'Forest spirit', "Preparation", 'Robot', 'LeJugement', 'Lin', 'Monstre élémentaire',
 	'Nausicaa', 'No Face', 'noMoarPigs', 'pigs', 'Porco Rosso', 'Protection rock', 'Run',
 	'Spectral', 'Deamon', 'Teto', 'Harry Potter', 'Ville Des Spectres', 'Yakul', 'Yakul ride',
-	'Yubaba', 'Zeniba'
+	'Yubaba', 'Zeniba', 'Mickey Old', 'Cruella De Vil', 'Elsa', 'Cendrillon', 'Ariel', 'Goofy',
+	'Lora Baines', 'Kevin Flynn', 'Bambi', 'Bambi 2', 'Bat Queen', 'Quorra', 'Ada', 'Akira Akatsuki',
+	'Airiels', 'Aladin', 'Alex', 'Aldarn', 'Alice', 'Annette', 'Antauri', 'Anubis', 'Arianna', 'Arcade'
+	, 'Aurore', 'Ayesha', 'Aziz', 'Alec', 'Baloo', 'Mowgli', 'Bashful', 'Bear', 'Pacha', 'Tarzan', 'Milo Thatch',
+	'Lady', 'Lala The Koala', 'Queen Leah', 'Cloud', 'Macbeth', 'Little Helper', 'Ludo', 'Officer Malone'
 ]
 
 
@@ -26,7 +30,13 @@ let imgCardsNames = ['01canaries.gif', '02sprites.gif', '03Garde inférieure.gif
 	'30ForestSpirit.jpg', "31laPreparation.gif", '32Robot.jpg', '33LeJugement.gif', '34Lin.jpg', '35monstre elementaire.gif',
 	'36nausicaa.jpg', '37No_Face_.png', '38noMoarPigs.gif', '39pigs.png', '40porco-rosso.jpg', '41Protection rock.gif', '42run.gif',
 	'43Spectral.jpg', '44Deamon.jpg', '45teto.jpg', '46HarryPotter.jpg', '47VilleDesSpectres.jpg', '48Yakul.jpg', '49YakulRide.jpg',
-	'50Yubaba.png', '51Zeniba.png'
+	'50Yubaba.png', '51Zeniba.png', '52MickeyOld.gif' , '53Cruella_De_Vil.jpg', '54Elsa.jpg', '55Cendrillon.jpg', '56Ariel.jpg',
+	'57Goofy.jpg', '58Lora_Baines.jpg', '59Kevin_Flynn.jpg', '60Bambi.jpg', '61Bambi2.jpg', '62BatQueen.jpg', '63Quorra.jpg'
+	, '64Ada.png', '65Akira_akatsuki.jpg', '66Airiels.jpg', '67Aladdin.png', '68Alex.jpg', '69Aldarn.jpg', '70Alice.jpg',
+	'71Annette.jpg', '72Antauri.jpg', '73Anubis.gif', '73Arianna.jpg', '74Arcade.png', '75Aurore.jpg',
+	'76Ayesha.png', '77Aziz.jpg', '78Alec.png', '79Baloo.jpg', '80Mowgli.jpg', '81Bashful.png', '82Bear.jpg',
+	'83Pacha.jpg', '84Tarzan.png', '85Milo_Thatch.png', '86Lady.jpg', '87Lala_The_Koala.jpg', '88Queen-Leah.png',
+	'89Cloud.png', '90Macbeth.jpg', '91Little_Helper.png', '92Ludo.png', '93Officer_Malone.jpg'
 ]
 
 let selectedCard = null;
@@ -39,13 +49,16 @@ function state() {
 		.done(function (msg) {
 			var reponse = JSON.parse(msg);
 
-			if (reponse != 'LAST_GAME_WON' && reponse != 'LAST_GAME_LOST') {
 
+			if (reponse != 'LAST_GAME_WON' && reponse != 'LAST_GAME_LOST' && reponse !='WAITING' && reponse.opponent.board != null) {
+				
 				let playerHand = reponse.hand;
 				let playerBoard = reponse.board;
 				let opponentBoard = reponse.opponent.board;
 
-				// console.log(reponse);
+				console.log(reponse);
+
+
 
 				// traitement ici…
 				clearGame();
@@ -60,15 +73,21 @@ function state() {
 
 			else {
 
-				if (reponse == 'LAST_GAME_WON') {
-					document.querySelector("#gameOverWin").style.display = "block";
-				}
-				
-				else if (reponse == 'LAST_GAME_LOST') {
-					document.querySelector("#gameOverLost").style.display = "block";
-				}
-				// 10 secondes avant le retour au lobby
-				setTimeout(redirectLobbyDelay, 10000);
+				if (reponse != "WAITING") {
+
+					if (reponse == 'LAST_GAME_WON') {
+						document.querySelector("#gameOverWin").style.display = "block";
+					}
+					
+					else if (reponse == 'LAST_GAME_LOST') {
+						document.querySelector("#gameOverLost").style.display = "block";
+					}
+					// 10 secondes avant le retour au lobby
+					setTimeout(redirectLobbyDelay, 10000);
+			}
+			else {
+				setTimeout(state, 1000);
+			}
 			}
 		})
 }
@@ -154,7 +173,7 @@ function ajouterCarte(tableau, conteneur, infos =null) {
 			}
 			else {
 			newCard.querySelector(".name").innerHTML = "unknown";
-			newCard.querySelector(".img").style.backgroundImage = "";			
+			//newCard.querySelector(".img").style.backgroundImage = "";			
 			}
 
 			newCard.querySelector(".mecanics").innerHTML = tableau[i].mechanics;
